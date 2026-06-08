@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saheer | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/assets/js/tilewind.config.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="/assets/images/s.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+
+<body
+    class="bg-[#03071e] text-blue-100 font-sans antialiased selection:bg-blue-600 selection:text-white overflow-x-hidden"
+    x-data="{ 
+        modalOpen: false, 
+        activeProject: { title: '', type: '', desc: '', bullets: [], tech: '', metric: '', icon: '' } 
+      }" :class="modalOpen ? 'overflow-hidden' : ''">
+
+    <div class="fixed inset-0 -z-10 overflow-hidden bg-[#020617]">
+        <div
+            class="absolute top-[10%] -left-10 w-96 h-96 bg-blue-700 rounded-full mix-blend-screen filter blur-[100px] opacity-25 animate-blob">
+        </div>
+        <div class="absolute top-[20%] -right-10 w-96 h-96 bg-cyan-600 rounded-full mix-blend-screen filter blur-[100px] opacity-25 animate-blob"
+            style="animation-delay: 3s;"></div>
+        <div class="absolute bottom-[10%] left-[20%] w-[450px] h-[450px] bg-indigo-800 rounded-full mix-blend-screen filter blur-[120px] opacity-20 animate-blob"
+            style="animation-delay: 6s;"></div>
+        <div
+            class="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_60%,transparent_100%)] opacity-40">
+        </div>
+    </div>
+
+    <nav
+        class="sticky top-0 z-40 backdrop-blur-md bg-[#020617]/50 border-b border-blue-950/50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#"
+                class="text-xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent hover:scale-105 transition-transform">
+                &lt;Saheer/&gt;
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-blue-200">
+                <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
+                <a href="#experience" class="hover:text-cyan-400 transition-colors">Experience</a>
+                <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+            </div>
+            <!-- <a href="#contact"
+                class="px-4 py-2 text-sm font-semibold text-white bg-blue-600/20 border border-blue-500/40 rounded-full hover:bg-blue-600 hover:border-blue-400 transition-all duration-300 shadow-[0_0_15px_rgba(37,99,235,0.2)] hover:shadow-[0_0_25px_rgba(6,182,212,0.4)]">
+                Hire Me
+            </a> -->
+        </div>
+    </nav>
+
+    <section class="reveal relative min-h-[calc(100vh-4rem)] flex items-center justify-center px-6">
+        <div class="max-w-4xl text-center space-y-6">
+            <span
+                class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-cyan-400 bg-blue-500/10 border border-blue-500/20 rounded-full animate-pulse-slow">
+                __portfolio__ init
+            </span>
+
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white leading-tight">
+                Hi, I am <span
+                    class="bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent">Shaheer</span>
+            </h1>
+
+            <div class="h-12 md:h-16 flex items-center justify-center">
+                <p class="text-2xl md:text-4xl font-semibold tracking-wide text-blue-200/90 typing-area">
+                    <span id="typing-text" class="border-r-4 border-cyan-400 pr-1 animate-pulse"></span>
+                </p>
+            </div>
+
+            <p class="text-lg md:text-xl text-blue-300/60 max-w-xl mx-auto font-light">
+                Full-Stack Developer with 7 years of hands-on experience specializing in scalable web applications,
+                RESTful APIs, and database optimization.
+            </p>
+
+            <div class="flex justify-center items-center gap-6 pt-2">
+                <a href="https://linkedin.com/in/saheer-kp" target="_blank" rel="noopener noreferrer"
+                    class="text-blue-400/70 hover:text-cyan-400 text-2xl transition-all duration-300 hover:-translate-y-1"
+                    title="LinkedIn Profile">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/Saheer-kp" target="_blank" rel="noopener noreferrer"
+                    class="text-blue-400/70 hover:text-indigo-400 text-2xl transition-all duration-300 hover:-translate-y-1"
+                    title="GitHub Profile">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#projects"
+                    class="w-full sm:w-auto px-8 py-3 text-sm font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full hover:opacity-90 transition-all duration-300 shadow-lg hover:-translate-y-1">
+                    View My Work
+                </a>
+                <a href="https://drive.google.com/file/d/1LZ1pLpR1OKGow0vHqKalxfdurr9obU8q/view?usp=sharing"
+                    target="_blank"
+                    class="w-full sm:w-auto px-8 py-3 text-sm font-medium text-blue-200 border border-blue-900 rounded-full hover:bg-blue-950/40 hover:border-blue-500 transition-all duration-300 hover:-translate-y-1">
+                    Get My CV <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="about" class="reveal py-24 max-w-6xl mx-auto px-6 overflow-x-hidden">
+        <div class="grid md:grid-cols-12 gap-12 items-center">
+
+            <div class="reveal-left md:col-span-5 flex justify-center relative group" style="perspective: 1000px;">
+                <div
+                    class="absolute inset-0 bg-gradient-to-tr from-cyan-500 to-indigo-600 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-all duration-500 ease-out max-w-[300px] max-h-[300px] mx-auto group-hover:scale-105">
+                </div>
+                <div
+                    class="relative w-72 h-72 md:w-80 md:h-80 rounded-3xl overflow-hidden bg-[#020617] shadow-[0_15px_35px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out will-change-transform group-hover:[transform:rotateX(6deg)_rotateY(-6deg)_translateY(-8px)] group-hover:shadow-[0_25px_50px_rgba(6,182,212,0.15)]">
+                    <img src="/assets/images/shr.jpeg" alt="Profile"
+                        class="w-full h-full object-cover will-change-transform transition-transform duration-500 ease-out group-hover:scale-110 group-hover:[transform:translateZ(20px)]">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[#020617]/40 via-transparent to-transparent pointer-events-none">
+                    </div>
+                </div>
+            </div>
+
+            <div class="reveal-right md:col-span-7 space-y-6">
+                <div
+                    class="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-wider text-cyan-400">
+                    <span class="w-8 h-[1px] bg-cyan-400"></span>
+                    <span>Who I Am</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight">About Me</h2>
+                <div class="space-y-4 text-blue-300/80 leading-relaxed font-light">
+                    <p>Highly motivated Full-Stack Developer expertise in PHP, Laravel, Node.js, and
+                        JavaScript, specializing in scalable web applications, RESTful APIs, and database optimization.
+                        Demonstrates adaptability to evolving technologies and a commitment to continuous learning.
+                        Ability
+                        to lead projects from concept to deployment and improve system performance. Eager to contribute
+                        technical expertise and innovative thinking to dynamic development environments.
+                    </p>
+                    <p>Skilled at rapidly understanding project requirements and delivering effective, scalable
+                        business-driven solutions.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-4 pt-4 max-w-md">
+                    <div class="p-4 bg-blue-950/20 border border-blue-900/30 rounded-2xl backdrop-blur-md">
+                        <span class="block text-2xl font-black text-cyan-400">7+</span>
+                        <span class="text-xs text-blue-400/70 font-medium uppercase tracking-wider">Years Exp.</span>
+                    </div>
+                    <div class="p-4 bg-blue-950/20 border border-blue-900/30 rounded-2xl backdrop-blur-md">
+                        <span class="block text-2xl font-black text-indigo-400">8+</span>
+                        <span class="text-xs text-blue-400/70 font-medium uppercase tracking-wider">Projects
+                            Completed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            .reveal-left,
+            .reveal-right {
+                opacity: 0;
+                will-change: transform, opacity;
+                transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+
+            .reveal-left {
+                transform: translate3d(-60px, 0, 0);
+            }
+
+            .reveal-right {
+                transform: translate3d(60px, 0, 0);
+            }
+
+            .reveal.active .reveal-left {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+                transition-delay: 0.1s;
+            }
+
+            .reveal.active .reveal-right {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+                transition-delay: 0.25s;
+            }
+        </style>
+    </section>
+
+    <section id="experience" class="reveal py-24 border-t border-blue-950/30 max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <div
+                class="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-wider text-blue-400 mb-2">
+                <i class="fas fa-th-large text-xs"></i>
+                <span>Interactive Hub</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight">Professional Ecosystem</h2>
+            <p class="text-blue-400/70 mt-2 text-sm font-light">Select a company on the left to see full project
+                responsibilities and ecosystem impacts.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+            <div
+                class="lg:col-span-4 space-y-3 bg-[#060d2a]/30 border border-blue-950/50 p-4 rounded-3xl backdrop-blur-md">
+
+                <button id="exp-btn-ateam" data-target="ateam"
+                    class="exp-nav-btn w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center justify-between group bg-gradient-to-r from-blue-950/60 to-cyan-950/40 border-cyan-500/50">
+                    <div>
+                        <h3 id="exp-title-ateam" class="font-bold text-sm tracking-wide text-cyan-400">Ateam Soft
+                            Solutions
+                        </h3>
+                        <p class="text-xs text-blue-400/70 font-medium mt-1">Software Engineer</p>
+                    </div>
+                    <i id="exp-arrow-ateam"
+                        class="fas fa-chevron-right text-xs text-cyan-400 translate-x-1 transition-transform"></i>
+                </button>
+
+                <button id="exp-btn-excelledia" data-target="excelledia"
+                    class="exp-nav-btn w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center justify-between group border-transparent hover:bg-blue-950/20">
+                    <div>
+                        <h3 id="exp-title-excelledia" class="font-bold text-sm tracking-wide text-white">Excelledia
+                            Ventures
+                        </h3>
+                        <p class="text-xs text-blue-400/70 font-medium mt-1">Software Engineer</p>
+                    </div>
+                    <i id="exp-arrow-excelledia"
+                        class="fas fa-chevron-right text-xs text-blue-900 transition-transform"></i>
+                </button>
+
+                <button id="exp-btn-datastone" data-target="datastone"
+                    class="exp-nav-btn w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center justify-between group border-transparent hover:bg-blue-950/20">
+                    <div>
+                        <h3 id="exp-title-datastone" class="font-bold text-sm tracking-wide text-white">Datastone
+                            Solutions
+                        </h3>
+                        <p class="text-xs text-blue-400/70 font-medium mt-1">Junior Developer</p>
+                    </div>
+                    <i id="exp-arrow-datastone"
+                        class="fas fa-chevron-right text-xs text-blue-900 transition-transform"></i>
+                </button>
+
+            </div>
+
+            <div class="lg:col-span-8 min-h-[380px]">
+
+                <div id="exp-panel-ateam"
+                    class="exp-content-panel grid grid-cols-1 md:grid-cols-3 gap-4 transition-all duration-300 opacity-100 scale-100">
+                    <div
+                        class="md:col-span-2 p-6 bg-[#060d2a]/60 border border-blue-950 rounded-3xl backdrop-blur-md flex flex-col justify-between">
+                        <div>
+                            <span
+                                class="inline-block text-[10px] font-mono tracking-widest text-cyan-400 bg-cyan-950/40 border border-cyan-900/50 px-2.5 py-0.5 rounded-full uppercase">Current
+                                Position</span>
+                            <h3 class="text-2xl font-bold text-white mt-3">Software Engineer</h3>
+                            <p class="text-sm font-medium text-blue-300/90 mt-0.5">Ateam Soft Solutions</p>
+                        </div>
+                        <div
+                            class="mt-6 pt-4 border-t border-blue-950/60 flex items-center justify-between text-xs text-blue-400/70">
+                            <span><i class="fas fa-map-marker-alt mr-1.5 text-cyan-500"></i>Technopark,
+                                Trivandrum</span>
+                            <span class="font-mono text-cyan-400">Mar 2022 - Present</span>
+                        </div>
+                    </div>
+                    <div
+                        class="p-6 bg-gradient-to-br from-cyan-950/30 via-[#060d2a]/60 to-[#020617] border border-blue-950 rounded-3xl backdrop-blur-md flex flex-col justify-between items-start">
+                        <div class="p-3 bg-cyan-500/10 border border-cyan-500/20 rounded-2xl text-cyan-400 text-sm"><i
+                                class="fas fa-chart-line"></i></div>
+                        <div><span class="block text-3xl font-black text-white">High</span><span
+                                class="text-xs font-medium uppercase text-blue-400/60">Performance Logic</span></div>
+                    </div>
+                </div>
+
+                <div id="exp-panel-excelledia"
+                    class="exp-content-panel grid grid-cols-1 md:grid-cols-3 gap-4 transition-all duration-300 opacity-0 scale-95 hidden">
+                    <div
+                        class="md:col-span-2 p-6 bg-[#060d2a]/60 border border-blue-950 rounded-3xl backdrop-blur-md flex flex-col justify-between">
+                        <div>
+                            <span
+                                class="inline-block text-[10px] font-mono tracking-widest text-blue-400 bg-blue-950/40 border border-blue-900/50 px-2.5 py-0.5 rounded-full uppercase">Mid-Senior
+                                Era</span>
+                            <h3 class="text-2xl font-bold text-white mt-3">Software Engineer</h3>
+                            <p class="text-sm font-medium text-blue-300/90 mt-0.5">Excelledia Ventures</p>
+                        </div>
+                        <div
+                            class="mt-6 pt-4 border-t border-blue-950/60 flex items-center justify-between text-xs text-blue-400/70">
+                            <span><i class="fas fa-map-marker-alt mr-1.5 text-blue-500"></i>GEO Infopark,
+                                Ernakulam</span>
+                            <span class="font-mono text-blue-400">Mar 2020 - Feb 2022</span>
+                        </div>
+                    </div>
+                    <div
+                        class="p-6 bg-gradient-to-br from-blue-950/30 via-[#060d2a]/60 to-[#020617] border border-blue-950 rounded-3xl backdrop-blur-md flex flex-col justify-between items-start">
+                        <div class="p-3 bg-blue-500/10 border border-blue-500/20 rounded-2xl text-blue-400 text-sm"><i
+                                class="fas fa-server"></i></div>
+                        <div><span class="block text-3xl font-black text-white">Core</span><span
+                                class="text-xs font-medium uppercase text-blue-400/60">Module Design</span></div>
+                    </div>
+                </div>
+
+                <div id="exp-panel-datastone"
+                    class="exp-content-panel grid grid-cols-1 md:grid-cols-3 gap-4 transition-all duration-300 opacity-0 scale-95 hidden">
+                    <div
+                        class="md:col-span-2 p-6 bg-[#060d2a]/60 border border-blue-950 rounded-3xl backdrop-blur-md flex flex-col justify-between">
+                        <div>
+                            <span
+                                class="inline-block text-[10px] font-mono tracking-widest text-indigo-400 bg-indigo-950/40 border border-indigo-900/50 px-2.5 py-0.5 rounded-full uppercase">Foundation
+                                Era</span>
+                            <h3 class="text-2xl font-bold text-white mt-3">Junior Software Developer</h3>
+                            <p class="text-sm font-medium text-blue-300/90 mt-0.5">Datastone Solutions LLP</p>
+                        </div>
+                        <div
+                            class="mt-6 pt-4 border-t border-blue-950/60 flex items-center justify-between text-xs text-blue-400/70">
+                            <span><i class="fas fa-map-marker-alt mr-1.5 text-indigo-500"></i>Kottakkal,
+                                Malappuram</span>
+                            <span class="font-mono text-indigo-400">Nov 2018 - Feb 2020</span>
+                        </div>
+                    </div>
+                    <div
+                        class="p-6 bg-gradient-to-br from-indigo-950/30 via-[#060d2a]/60 to-[#020617] border border-blue-950 rounded-3xl backdrop-blur-md flex flex-col justify-between items-start">
+                        <div
+                            class="p-3 bg-indigo-500/10 border border-indigo-500/20 rounded-2xl text-indigo-400 text-sm">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <div><span class="block text-3xl font-black text-white">Solo</span><span
+                                class="text-xs font-medium uppercase text-blue-400/60">Ownership</span></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section id="skills" class="reveal py-24 border-t border-blue-950/30 bg-[#020617]/40 backdrop-blur-sm">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight">Technical Ecosystem</h2>
+                <p class="text-blue-400 mt-2 text-sm">The technologies, frameworks, and tools I use to build scalable
+                    products.</p>
+            </div>
+
+            <div class="space-y-12">
+                <div>
+                    <h3 class="text-xs font-mono uppercase tracking-widest text-cyan-400 mb-4 px-2">Core Languages &
+                        Backend
+                    </h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                        <div class="reveal-card skill-card group relative flex flex-col items-center justify-center p-6 bg-[#070f2e]/60 border border-blue-950 rounded-2xl will-change-transform transition-[transform,border-color] duration-200 ease-out hover:border-indigo-500/50 hover:-translate-y-1.5"
+                            style="--delay: 1;">
+                            <i class="devicon-php-plain text-5xl text-[#777BB4]"></i>
+                            <span class="mt-4 text-sm font-medium text-blue-200">PHP</span>
+                        </div>
+                        <div class="reveal-card skill-card group relative flex flex-col items-center justify-center p-6 bg-[#070f2e]/60 border border-blue-950 rounded-2xl will-change-transform transition-[transform,border-color] duration-200 ease-out hover:border-red-500/50 hover:-translate-y-1.5"
+                            style="--delay: 2;">
+                            <i class="devicon-laravel-original colored text-5xl"></i>
+                            <span class="mt-4 text-sm font-medium text-blue-200">Laravel</span>
+                        </div>
+                        <div class="reveal-card skill-card group relative flex flex-col items-center justify-center p-6 bg-[#070f2e]/60 border border-blue-950 rounded-2xl will-change-transform transition-[transform,border-color] duration-200 ease-out hover:border-green-500/50 hover:-translate-y-1.5"
+                            style="--delay: 3;">
+                            <i class="devicon-nodejs-plain colored text-5xl"></i>
+                            <span class="mt-4 text-sm font-medium text-blue-200">Node.js</span>
+                        </div>
+                        <div class="reveal-card skill-card group relative flex flex-col items-center justify-center p-6 bg-[#070f2e]/60 border border-blue-950 rounded-2xl will-change-transform transition-[transform,border-color] duration-200 ease-out hover:border-slate-400/50 hover:-translate-y-1.5"
+                            style="--delay: 4;">
+                            <i class="devicon-express-original text-5xl text-white"></i>
+                            <span class="mt-4 text-sm font-medium text-blue-200">Express</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xs font-mono uppercase tracking-widest text-emerald-400 mb-4 px-2">Frontend &
+                        Interface
+                    </h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                        <div class="reveal-card skill-card group relative flex flex-col items-center justify-center p-6 bg-[#070f2e]/60 border border-blue-950 rounded-2xl will-change-transform transition-[transform,border-color] duration-200 ease-out hover:border-yellow-500/50 hover:-translate-y-1.5"
+                            style="--delay: 1;">
+                            <i class="devicon-javascript-plain colored text-5xl"></i>
+                            <span class="mt-4 text-sm font-medium text-blue-200">JavaScript</span>
+                        </div>
+                        <div class="reveal-card skill-card group relative flex flex-col items-center justify-center p-6 bg-[#070f2e]/60 border border-blue-950 rounded-2xl will-change-transform transition-[transform,border-color] duration-200 ease-out hover:border-blue-500/50 hover:-translate-y-1.5"
+                            style="--delay: 2;">
+                            <i class="devicon-typescript-plain colored text-5xl"></i>
+                            <span class="mt-4 text-sm font-medium text-blue-200">TypeScript</span>
+                        </div>
+                        <div class="reveal-card skill-card group relative flex flex-col items-center justify-center p-6 bg-[#070f2e]/60 border border-blue-950 rounded-2xl will-change-transform transition-[transform,border-color] duration-200 ease-out hover:border-emerald-400/50 hover:-translate-y-1.5"
+                            style="--delay: 3;">
+                            <i class="devicon-vuejs-plain colored text-5xl"></i>
+                            <span class="mt-4 text-sm font-medium text-blue-200">Vue.js</span>
+                        </div>
+                        <div class="reveal-card skill-card group relative flex flex-col items-center justify-center p-6 bg-[#070f2e]/60 border border-blue-950 rounded-2xl will-change-transform transition-[transform,border-color] duration-200 ease-out hover:border-pink-500/50 hover:-translate-y-1.5"
+                            style="--delay: 4;">
+                            <i class="devicon-bootstrap-plain colored text-5xl"></i>
+                            <span class="mt-4 text-sm font-medium text-blue-200">Bootstrap</span>
+                        </div>
+                        <div class="reveal-card skill-card group relative flex flex-col items-center justify-center p-6 bg-[#070f2e]/60 border border-blue-950 rounded-2xl will-change-transform transition-[transform,border-color] duration-200 ease-out hover:border-cyan-400/50 hover:-translate-y-1.5"
+                            style="--delay: 5;">
+                            <i class="devicon-tailwindcss-original colored text-5xl"></i>
+                            <span class="mt-4 text-sm font-medium text-blue-200">Tailwind CSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xs font-mono uppercase tracking-widest text-blue-400 mb-4 px-2">Databases & Storage
+                    </h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                        <div class="reveal-card skill-card group relative flex flex-col items-center justify-center p-6 bg-[#070f2e]/60 border border-blue-950 rounded-2xl will-change-transform transition-[transform,border-color] duration-200 ease-out hover:border-sky-600/50 hover:-translate-y-1.5"
+                            style="--delay: 1;">
+                            <i class="devicon-mysql-original colored text-5xl"></i>
+                            <span class="mt-4 text-sm font-medium text-blue-200">MySQL</span>
+                        </div>
+                        <div class="reveal-card skill-card group relative flex flex-col items-center justify-center p-6 bg-[#070f2e]/60 border border-blue-950 rounded-2xl will-change-transform transition-[transform,border-color] duration-200 ease-out hover:border-blue-400/50 hover:-translate-y-1.5"
+                            style="--delay: 2;">
+                            <i class="devicon-postgresql-plain colored text-5xl"></i>
+                            <span class="mt-4 text-sm font-medium text-blue-200">PostgreSQL</span>
+                        </div>
+                        <div class="reveal-card skill-card group relative flex flex-col items-center justify-center p-6 bg-[#070f2e]/60 border border-blue-950 rounded-2xl will-change-transform transition-[transform,border-color] duration-200 ease-out hover:border-green-600/50 hover:-translate-y-1.5"
+                            style="--delay: 3;">
+                            <i class="devicon-mongodb-plain colored text-5xl"></i>
+                            <span class="mt-4 text-sm font-medium text-blue-200">MongoDB</span>
+                        </div>
+                        <div class="reveal-card skill-card group relative flex flex-col items-center justify-center p-6 bg-[#070f2e]/60 border border-blue-950 rounded-2xl will-change-transform transition-[transform,border-color] duration-200 ease-out hover:border-red-600/50 hover:-translate-y-1.5"
+                            style="--delay: 4;">
+                            <i class="devicon-firebase-plain colored text-5xl"></i>
+                            <span class="mt-4 text-sm font-medium text-blue-200">Firebase</span>
+                        </div>
+                        <div class="reveal-card skill-card group relative flex flex-col items-center justify-center p-6 bg-[#070f2e]/60 border border-blue-950 rounded-2xl will-change-transform transition-[transform,border-color] duration-200 ease-out hover:border-red-600/50 hover:-translate-y-1.5"
+                            style="--delay: 4;">
+                            <i class="devicon-redis-plain colored text-5xl"></i>
+                            <span class="mt-4 text-sm font-medium text-blue-200">Redis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xs font-mono uppercase tracking-widest text-purple-400 mb-4 px-2">Cloud & DevOps
+                    </h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                        <div class="reveal-card skill-card group relative flex flex-col items-center justify-center p-6 bg-[#070f2e]/60 border border-blue-950 rounded-2xl will-change-transform transition-[transform,border-color] duration-200 ease-out hover:border-orange-400/50 hover:-translate-y-1.5"
+                            style="--delay: 1;">
+                            <i class="devicon-amazonwebservices-plain colored text-5xl"></i>
+                            <span class="mt-4 text-[11px] font-medium text-blue-200 text-center leading-tight">AWS (EC2,
+                                S3,
+                                SES, RDS)</span>
+                        </div>
+                        <div class="reveal-card skill-card group relative flex flex-col items-center justify-center p-6 bg-[#070f2e]/60 border border-blue-950 rounded-2xl will-change-transform transition-[transform,border-color] duration-200 ease-out hover:border-sky-400/50 hover:-translate-y-1.5"
+                            style="--delay: 2;">
+                            <i class="devicon-docker-plain colored text-5xl"></i>
+                            <span class="mt-4 text-sm font-medium text-blue-200">Docker</span>
+                        </div>
+                        <div class="reveal-card skill-card group relative flex flex-col items-center justify-center p-6 bg-[#070f2e]/60 border border-blue-950 rounded-2xl will-change-transform transition-[transform,border-color] duration-200 ease-out hover:border-orange-600/50 hover:-translate-y-1.5"
+                            style="--delay: 3;">
+                            <i class="devicon-git-plain colored text-5xl"></i>
+                            <span class="mt-4 text-sm font-medium text-blue-200">Git</span>
+                        </div>
+                        <div class="reveal-card skill-card group relative flex flex-col items-center justify-center p-6 bg-[#070f2e]/60 border border-blue-950 rounded-2xl will-change-transform transition-[transform,border-color] duration-200 ease-out hover:border-indigo-400/50 hover:-translate-y-1.5"
+                            style="--delay: 4;">
+                            <i class="devicon-gitlab-plain colored text-5xl text-indigo-400"></i>
+                            <span class="mt-4 text-sm font-medium text-blue-200">Gitlab CI/CD</span>
+                        </div>
+                        <div class="reveal-card skill-card group relative flex flex-col items-center justify-center p-6 bg-[#070f2e]/60 border border-blue-950 rounded-2xl will-change-transform transition-[transform,border-color] duration-200 ease-out hover:border-indigo-400/50 hover:-translate-y-1.5"
+                            style="--delay: 4;">
+                            <i class="devicon-ssh-original text-5xl text-indigo-400"></i>
+                            <span class="mt-4 text-sm font-medium text-blue-200">SSH</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xs font-mono uppercase tracking-widest text-pink-400 mb-4 px-2">AI Exposure</h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                        <div class="reveal-card skill-card group relative flex flex-col items-center justify-center p-6 bg-[#070f2e]/60 border border-blue-950 rounded-2xl will-change-transform transition-[transform,border-color] duration-200 ease-out hover:border-pink-500/50 hover:-translate-y-1.5"
+                            style="--delay: 1;">
+                            <i class="fas fa-brain text-5xl text-[#FF69B4]"></i>
+                            <span class="mt-4 text-sm font-medium text-blue-200 text-center leading-tight">Generative AI
+                                (LLMs)</span>
+                        </div>
+                        <div class="reveal-card skill-card group relative flex flex-col items-center justify-center p-6 bg-[#070f2e]/60 border border-blue-950 rounded-2xl will-change-transform transition-[transform,border-color] duration-200 ease-out hover:border-cyan-400/50 hover:-translate-y-1.5"
+                            style="--delay: 3;">
+                            <div class="h-12 flex items-center justify-center">
+                                <img src="/assets/images/cursor-ai.png" alt="Cursor AI"
+                                    class="h-12 w-12 object-contain filter brightness-110">
+                            </div>
+                            <span class="mt-4 text-sm font-medium text-blue-200">Cursor</span>
+                        </div>
+                        <div class="reveal-card skill-card group relative flex flex-col items-center justify-center p-6 bg-[#070f2e]/60 border border-blue-950 rounded-2xl will-change-transform transition-[transform,border-color] duration-200 ease-out hover:border-purple-500/50 hover:-translate-y-1.5"
+                            style="--delay: 4;">
+                            <div class="h-12 flex items-center justify-center">
+                                <img src="/assets/images/antigravity.webp" alt="Google Antigravity"
+                                    class="h-10 max-w-[80px] object-contain filter mix-blend-screen brightness-125">
+                            </div>
+                            <span class="mt-4 text-sm font-medium text-blue-200">Antigravity</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            .reveal-card {
+                opacity: 0;
+                transform: translate3d(0, 30px, 0);
+                will-change: transform, opacity;
+                transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, opacity 0.6s ease;
+            }
+
+            .reveal.active .reveal-card {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+                transition-delay: calc(var(--delay) * 60ms);
+            }
+        </style>
+    </section>
+
+
+    <section id="projects" class="reveal py-24 border-t border-blue-950/30">
+        <div class="max-w-6xl mx-auto px-6">
+
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight">Selected Projects</h2>
+                    <p class="text-blue-400 mt-2 text-sm">An engineered portfolio index splitting enterprise
+                        applications
+                        from internal systems.</p>
+                </div>
+
+                <div
+                    class="relative p-1 bg-[#050b24] border border-blue-950 rounded-full flex items-center w-full md:w-auto z-10">
+                    <button id="btn-career"
+                        class="tab-btn px-6 py-2.5 text-xs tracking-wider uppercase rounded-full transition-all duration-300 bg-gradient-to-r from-blue-600 to-cyan-500 text-slate-950 font-bold shadow-lg">
+                        <i class="fas fa-briefcase mr-1.5 text-xs"></i> Career
+                    </button>
+                    <button id="btn-personal"
+                        class="tab-btn px-6 py-2.5 text-xs tracking-wider uppercase rounded-full transition-all duration-300 text-blue-400/80 hover:text-white">
+                        <i class="fas fa-flask mr-1.5 text-xs"></i> Personal
+                    </button>
+                </div>
+            </div>
+
+            <!-- <div id="tab-content-career"
+                class="project-tab-pane grid grid-cols-1 md:grid-cols-2 gap-8 transition-opacity duration-300">
+
+                <div
+                    class="group bg-[#060d2a]/60 border border-blue-950/80 rounded-3xl p-8 relative flex flex-col justify-between backdrop-blur-md hover:border-cyan-500/40 transition-all duration-300">
+                    <div>
+                        <div class="flex justify-between items-center gap-4 mb-4">
+                            <span
+                                class="text-[10px] font-mono tracking-widest px-2.5 py-0.5 bg-blue-950/50 border border-blue-900 text-blue-400 rounded-full uppercase">API
+                                Architecture</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors mb-2">The
+                            New
+                            American</h3>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">WordPress
+                                API</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">JWT
+                                Auth</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">PHP</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">MySQL</span>
+                        </div>
+                        <p class="text-blue-300/70 text-sm font-light leading-relaxed mb-6">Custom headless WordPress
+                            API
+                            ecosystem built to dispatch high-volume news content, e-commerce checkouts, and mobile
+                            subscriptions securely.</p>
+                    </div>
+                    <button data-project="american"
+                        class="metrics-btn w-full text-center py-3 px-4 bg-blue-950/40 hover:bg-blue-600 border border-blue-900/60 hover:border-blue-400 hover:text-white text-xs text-blue-300 font-semibold rounded-xl transition-all duration-300 tracking-wide mt-4">View
+                        Metrics & Architecture</button>
+                </div>
+
+                <div
+                    class="group bg-[#060d2a]/60 border border-blue-950/80 rounded-3xl p-8 relative flex flex-col justify-between backdrop-blur-md hover:border-emerald-500/40 transition-all duration-300">
+                    <div>
+                        <div class="flex justify-between items-center gap-4 mb-4">
+                            <span
+                                class="text-[10px] font-mono tracking-widest px-2.5 py-0.5 bg-emerald-950/50 border border-emerald-900 text-emerald-400 rounded-full uppercase">Telehealth
+                                Portal</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors mb-2">
+                            Aloha
+                            PMS</h3>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">PHP</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">Laravel</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">JQuery</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">MySQL</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">Firebase</span>
+                        </div>
+                        <p class="text-blue-300/70 text-sm font-light leading-relaxed mb-6">Telehealth platform enabling
+                            remote medical consultations between patients and healthcare providers.</p>
+                    </div>
+                    <button data-project="aloha"
+                        class="metrics-btn w-full text-center py-3 px-4 bg-blue-950/40 hover:bg-blue-600 border border-blue-900/60 hover:border-blue-400 hover:text-white text-xs text-blue-300 font-semibold rounded-xl transition-all duration-300 tracking-wide mt-4">View
+                        Metrics & Architecture</button>
+                </div>
+
+                <div
+                    class="group bg-[#060d2a]/60 border border-blue-950/80 rounded-3xl p-8 relative flex flex-col justify-between backdrop-blur-md hover:border-purple-500/40 transition-all duration-300">
+                    <div>
+                        <div class="flex justify-between items-center gap-4 mb-4">
+                            <span
+                                class="text-[10px] font-mono tracking-widest px-2.5 py-0.5 bg-purple-950/50 border border-purple-900 text-purple-400 rounded-full uppercase">Legal
+                                Operations</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white group-hover:text-purple-400 transition-colors mb-2">
+                            Easy
+                            Advo</h3>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">PHP</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">Laravel</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">Agora.io</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">Stripe
+                                & Stripe Connect</span>
+                        </div>
+                        <p class="text-blue-300/70 text-sm font-light leading-relaxed mb-6">An online platform for
+                            one-on-one video conferencing with lawyers and case tracking mechanics.</p>
+                    </div>
+                    <button data-project="easyadvo"
+                        class="metrics-btn w-full text-center py-3 px-4 bg-blue-950/40 hover:bg-blue-600 border border-blue-900/60 hover:border-blue-400 hover:text-white text-xs text-blue-300 font-semibold rounded-xl transition-all duration-300 tracking-wide mt-4">View
+                        Metrics & Architecture</button>
+                </div>
+
+                <div
+                    class="group bg-[#060d2a]/60 border border-blue-950/80 rounded-3xl p-8 relative flex flex-col justify-between backdrop-blur-md hover:border-blue-500/40 transition-all duration-300">
+                    <div>
+                        <div class="flex justify-between items-center gap-4 mb-4">
+                            <span
+                                class="text-[10px] font-mono tracking-widest px-2.5 py-0.5 bg-blue-950/50 border border-blue-900 text-blue-400 rounded-full uppercase">B2B
+                                E-Commerce</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors mb-2">TAB
+                            Surfaces</h3>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">PHP</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">Laravel</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">AWS
+                                S3</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">SAP
+                                Third-party API</span>
+                        </div>
+                        <p class="text-blue-300/70 text-sm font-light leading-relaxed mb-6">B2B e-commerce platform
+                            enabling
+                            transactional workflows and real-time inventory checks.</p>
+                    </div>
+                    <button data-project="tabsurfaces"
+                        class="metrics-btn w-full text-center py-3 px-4 bg-blue-950/40 hover:bg-blue-600 border border-blue-900/60 hover:border-blue-400 hover:text-white text-xs text-blue-300 font-semibold rounded-xl transition-all duration-300 tracking-wide mt-4">View
+                        Metrics & Architecture</button>
+                </div>
+
+                <div
+                    class="group bg-[#060d2a]/60 border border-blue-950/80 rounded-3xl p-8 relative flex flex-col justify-between backdrop-blur-md hover:border-indigo-500/40 transition-all duration-300">
+                    <div>
+                        <div class="flex justify-between items-center gap-4 mb-4">
+                            <span
+                                class="text-[10px] font-mono tracking-widest px-2.5 py-0.5 bg-indigo-950/50 border border-indigo-900 text-indigo-400 rounded-full uppercase">On-Demand
+                                Mobility</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white group-hover:text-indigo-400 transition-colors mb-2">
+                            Ride-550</h3>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">PHP</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">Laravel</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">JQuery</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">Node.js</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">Socket.io</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">Azure
+                                Storage</span>
+                        </div>
+                        <p class="text-blue-300/70 text-sm font-light leading-relaxed mb-6">Ride booking platform
+                            supporting
+                            both on-demand matching and pre-scheduled user journeys.</p>
+                    </div>
+                    <button data-project="ride550"
+                        class="metrics-btn w-full text-center py-3 px-4 bg-blue-950/40 hover:bg-blue-600 border border-blue-900/60 hover:border-blue-400 hover:text-white text-xs text-blue-300 font-semibold rounded-xl transition-all duration-300 tracking-wide mt-4">View
+                        Metrics & Architecture</button>
+                </div>
+
+                <div
+                    class="group bg-[#060d2a]/60 border border-blue-950/80 rounded-3xl p-8 relative flex flex-col justify-between backdrop-blur-md hover:border-blue-500/40 transition-all duration-300">
+                    <div>
+                        <div class="flex justify-between items-center gap-4 mb-4">
+                            <span
+                                class="text-[10px] font-mono tracking-widest px-2.5 py-0.5 bg-blue-950/50 border border-blue-900 text-blue-400 rounded-full uppercase">Real-Time
+                                Gaming</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors mb-2">
+                            Yakeety
+                        </h3>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">PHP</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">Laravel</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">PostgreSQL</span>
+                        </div>
+                        <p class="text-blue-300/70 text-sm font-light leading-relaxed mb-6">Interactive live quiz
+                            platform
+                            featuring dynamic game mechanics and automated access panels.</p>
+                    </div>
+                    <button data-project="yakeety"
+                        class="metrics-btn w-full text-center py-3 px-4 bg-blue-950/40 hover:bg-blue-600 border border-blue-900/60 hover:border-blue-400 hover:text-white text-xs text-blue-300 font-semibold rounded-xl transition-all duration-300 tracking-wide mt-4">View
+                        Metrics & Architecture</button>
+                </div>
+
+                <div
+                    class="group bg-[#060d2a]/60 border border-blue-950/80 rounded-3xl p-8 relative flex flex-col justify-between backdrop-blur-md hover:border-indigo-500/40 transition-all duration-300">
+                    <div>
+                        <div class="flex justify-between items-center gap-4 mb-4">
+                            <span
+                                class="text-[10px] font-mono tracking-widest px-2.5 py-0.5 bg-indigo-950/50 border border-indigo-900 text-indigo-400 rounded-full uppercase">Enterprise
+                                RegTech</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white group-hover:text-indigo-400 transition-colors mb-2">
+                            Audit
+                            Tracker</h3>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">Laravel</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">AngularJS</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">AWS
+                                S3</span>
+                        </div>
+                        <p class="text-blue-300/70 text-sm font-light leading-relaxed mb-6">Regulated compliance
+                            tracking
+                            platform managing full-cycle auditing maps safely.</p>
+                    </div>
+                    <button data-project="audit"
+                        class="metrics-btn w-full text-center py-3 px-4 bg-blue-950/40 hover:bg-blue-600 border border-blue-900/60 hover:border-blue-400 hover:text-white text-xs text-blue-300 font-semibold rounded-xl transition-all duration-300 tracking-wide mt-4">View
+                        Metrics & Architecture</button>
+                </div>
+
+                <div
+                    class="group bg-[#060d2a]/60 border border-blue-950/80 rounded-3xl p-8 relative flex flex-col justify-between backdrop-blur-md hover:border-purple-500/40 transition-all duration-300">
+                    <div>
+                        <div class="flex justify-between items-center gap-4 mb-4">
+                            <span
+                                class="text-[10px] font-mono tracking-widest px-2.5 py-0.5 bg-purple-950/50 border border-purple-900 text-purple-400 rounded-full uppercase">Installment
+                                Solution</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white group-hover:text-purple-400 transition-colors mb-2">
+                            E-chit
+                        </h3>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">PHP</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">Laravel</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">MySQL</span>
+                        </div>
+                        <p class="text-blue-300/70 text-sm font-light leading-relaxed mb-6">Chit-fund
+                            administration portal enabling digital experience of payment collections for agents.</p>
+                    </div>
+                    <button data-project="echit"
+                        class="metrics-btn w-full text-center py-3 px-4 bg-blue-950/40 hover:bg-blue-600 border border-blue-900/60 hover:border-blue-400 hover:text-white text-xs text-blue-300 font-semibold rounded-xl transition-all duration-300 tracking-wide mt-4">View
+                        Metrics & Architecture</button>
+                </div>
+
+            </div> -->
+
+            <div id="tab-content-career"
+                class="project-tab-pane grid grid-cols-1 md:grid-cols-2 gap-8 transition-opacity duration-300">
+
+                <div
+                    class="group bg-[#060d2a]/60 border border-blue-950/80 rounded-3xl p-8 relative flex flex-col justify-between backdrop-blur-md hover:border-cyan-500/40 transition-all duration-300">
+                    <div>
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">The
+                                New American
+                            </h3>
+                            <div class="flex items-center gap-2.5 self-start sm:self-auto">
+                                <a href="https://play.google.com/store/apps/details?id=com.tnanews.ateam&pcampaignid=web_share"
+                                    target="_blank" rel="noopener noreferrer"
+                                    class="inline-flex items-center gap-1.5 py-1 px-3 bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-[10px] text-cyan-400 font-semibold rounded-full transition-all duration-300 tracking-wide">
+                                    <span>View Live</span> <i class="fas fa-external-link-alt text-[9px]"></i>
+                                </a>
+                                <span
+                                    class="text-[10px] font-mono tracking-widest px-2.5 py-0.5 bg-blue-950/50 border border-blue-900 text-blue-400 rounded-full uppercase">API
+                                    Architecture</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">WordPress
+                                API</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">JWT
+                                Auth</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">PHP</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">MySQL</span>
+                        </div>
+                        <p class="text-blue-300/70 text-sm font-light leading-relaxed mb-6">Custom headless WordPress
+                            API ecosystem
+                            built to dispatch high-volume news content, e-commerce checkouts, and mobile subscriptions
+                            securely.</p>
+                    </div>
+                    <div class="mt-4">
+                        <button data-project="american"
+                            class="metrics-btn w-full text-center py-3 px-4 bg-blue-950/40 hover:bg-blue-600 border border-blue-900/60 hover:border-blue-400 hover:text-white text-xs text-blue-300 font-semibold rounded-xl transition-all duration-300 tracking-wide">
+                            View Metrics & Architecture
+                        </button>
+                    </div>
+                </div>
+
+                <div
+                    class="group bg-[#060d2a]/60 border border-blue-950/80 rounded-3xl p-8 relative flex flex-col justify-between backdrop-blur-md hover:border-emerald-500/40 transition-all duration-300">
+                    <div>
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+                                Aloha PMS</h3>
+                            <div class="flex items-center gap-2.5 self-start sm:self-auto">
+                                <a href="https://alohatelehealth.alohaconnect.com.au" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="inline-flex items-center gap-1.5 py-1 px-3 bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-[10px] text-cyan-400 font-semibold rounded-full transition-all duration-300 tracking-wide">
+                                    <span>View Live</span> <i class="fas fa-external-link-alt text-[9px]"></i>
+                                </a>
+                                <span
+                                    class="text-[10px] font-mono tracking-widest px-2.5 py-0.5 bg-emerald-950/50 border border-emerald-900 text-emerald-400 rounded-full uppercase">Telehealth
+                                    Portal</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">PHP</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">Laravel</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">JQuery</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">MySQL</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">Firebase</span>
+                        </div>
+                        <p class="text-blue-300/70 text-sm font-light leading-relaxed mb-6">Telehealth platform enabling
+                            remote
+                            medical consultations between patients and healthcare providers.</p>
+                    </div>
+                    <div class="mt-4">
+                        <button data-project="aloha"
+                            class="metrics-btn w-full text-center py-3 px-4 bg-blue-950/40 hover:bg-blue-600 border border-blue-900/60 hover:border-blue-400 hover:text-white text-xs text-blue-300 font-semibold rounded-xl transition-all duration-300 tracking-wide">
+                            View Metrics & Architecture
+                        </button>
+                    </div>
+                </div>
+
+                <div
+                    class="group bg-[#060d2a]/60 border border-blue-950/80 rounded-3xl p-8 relative flex flex-col justify-between backdrop-blur-md hover:border-purple-500/40 transition-all duration-300">
+                    <div>
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-purple-400 transition-colors">Easy
+                                Advo</h3>
+                            <div class="flex items-center gap-2.5 self-start sm:self-auto">
+                                <a href="https://easyadvo.de" target="_blank" rel="noopener noreferrer"
+                                    class="inline-flex items-center gap-1.5 py-1 px-3 bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-[10px] text-cyan-400 font-semibold rounded-full transition-all duration-300 tracking-wide">
+                                    <span>View Live</span> <i class="fas fa-external-link-alt text-[9px]"></i>
+                                </a>
+                                <span
+                                    class="text-[10px] font-mono tracking-widest px-2.5 py-0.5 bg-purple-950/50 border border-purple-900 text-purple-400 rounded-full uppercase">Legal
+                                    Operations</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">PHP</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">Laravel</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">Agora.io</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">Stripe</span>
+                        </div>
+                        <p class="text-blue-300/70 text-sm font-light leading-relaxed mb-6">An online platform for
+                            one-on-one video
+                            conferencing with lawyers and case tracking mechanics.</p>
+                    </div>
+                    <div class="mt-4">
+                        <button data-project="easyadvo"
+                            class="metrics-btn w-full text-center py-3 px-4 bg-blue-950/40 hover:bg-blue-600 border border-blue-900/60 hover:border-blue-400 hover:text-white text-xs text-blue-300 font-semibold rounded-xl transition-all duration-300 tracking-wide">
+                            View Metrics & Architecture
+                        </button>
+                    </div>
+                </div>
+
+                <div
+                    class="group bg-[#060d2a]/60 border border-blue-950/80 rounded-3xl p-8 relative flex flex-col justify-between backdrop-blur-md hover:border-blue-500/40 transition-all duration-300">
+                    <div>
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">TAB
+                                Surfaces</h3>
+                            <div class="flex items-center gap-2.5 self-start sm:self-auto">
+                                <a href="https://apps.apple.com/in/app/tab-surfaces/id6467222504" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="inline-flex items-center gap-1.5 py-1 px-3 bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-[10px] text-cyan-400 font-semibold rounded-full transition-all duration-300 tracking-wide">
+                                    <span>View Live</span> <i class="fas fa-external-link-alt text-[9px]"></i>
+                                </a>
+                                <span
+                                    class="text-[10px] font-mono tracking-widest px-2.5 py-0.5 bg-blue-950/50 border border-blue-900 text-blue-400 rounded-full uppercase">B2B
+                                    E-Commerce</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">PHP</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">Laravel</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">AWS
+                                S3</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">SAP
+                                API</span>
+                        </div>
+                        <p class="text-blue-300/70 text-sm font-light leading-relaxed mb-6">B2B e-commerce platform
+                            enabling
+                            transactional workflows and real-time inventory checks.</p>
+                    </div>
+                    <div class="mt-4">
+                        <button data-project="tabsurfaces"
+                            class="metrics-btn w-full text-center py-3 px-4 bg-blue-950/40 hover:bg-blue-600 border border-blue-900/60 hover:border-blue-400 hover:text-white text-xs text-blue-300 font-semibold rounded-xl transition-all duration-300 tracking-wide">
+                            View Metrics & Architecture
+                        </button>
+                    </div>
+                </div>
+
+                <div
+                    class="group bg-[#060d2a]/60 border border-blue-950/80 rounded-3xl p-8 relative flex flex-col justify-between backdrop-blur-md hover:border-indigo-500/40 transition-all duration-300">
+                    <div>
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-indigo-400 transition-colors">
+                                Ride-550</h3>
+                            <div class="flex items-center gap-2.5 self-start sm:self-auto">
+                                <a href="#" target="_blank" rel="noopener noreferrer"
+                                    class="inline-flex items-center gap-1.5 py-1 px-3 bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-[10px] text-cyan-400 font-semibold rounded-full transition-all duration-300 tracking-wide">
+                                    <span>View Live</span> <i class="fas fa-external-link-alt text-[9px]"></i>
+                                </a>
+                                <span
+                                    class="text-[10px] font-mono tracking-widest px-2.5 py-0.5 bg-indigo-950/50 border border-indigo-900 text-indigo-400 rounded-full uppercase">On-Demand
+                                    Mobility</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">PHP</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">Laravel</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">JQuery</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">Node.js</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">Socket.io</span>
+                        </div>
+                        <p class="text-blue-300/70 text-sm font-light leading-relaxed mb-6">Ride booking platform
+                            supporting both
+                            on-demand matching and pre-scheduled user journeys.</p>
+                    </div>
+                    <div class="mt-4">
+                        <button data-project="ride550"
+                            class="metrics-btn w-full text-center py-3 px-4 bg-blue-950/40 hover:bg-blue-600 border border-blue-900/60 hover:border-blue-400 hover:text-white text-xs text-blue-300 font-semibold rounded-xl transition-all duration-300 tracking-wide">
+                            View Metrics & Architecture
+                        </button>
+                    </div>
+                </div>
+
+                <div
+                    class="group bg-[#060d2a]/60 border border-blue-950/80 rounded-3xl p-8 relative flex flex-col justify-between backdrop-blur-md hover:border-blue-500/40 transition-all duration-300">
+                    <div>
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                                Yakeety</h3>
+                            <div class="flex items-center gap-2.5 self-start sm:self-auto">
+                                <a href="#" target="_blank" rel="noopener noreferrer"
+                                    class="inline-flex items-center gap-1.5 py-1 px-3 bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-[10px] text-cyan-400 font-semibold rounded-full transition-all duration-300 tracking-wide">
+                                    <span>View Live</span> <i class="fas fa-external-link-alt text-[9px]"></i>
+                                </a>
+                                <span
+                                    class="text-[10px] font-mono tracking-widest px-2.5 py-0.5 bg-blue-950/50 border border-blue-900 text-blue-400 rounded-full uppercase">Real-Time
+                                    Gaming</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">PHP</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">Laravel</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">PostgreSQL</span>
+                        </div>
+                        <p class="text-blue-300/70 text-sm font-light leading-relaxed mb-6">Interactive live quiz
+                            platform featuring
+                            dynamic game mechanics and automated access panels.</p>
+                    </div>
+                    <div class="mt-4">
+                        <button data-project="yakeety"
+                            class="metrics-btn w-full text-center py-3 px-4 bg-blue-950/40 hover:bg-blue-600 border border-blue-900/60 hover:border-blue-400 hover:text-white text-xs text-blue-300 font-semibold rounded-xl transition-all duration-300 tracking-wide">
+                            View Metrics & Architecture
+                        </button>
+                    </div>
+                </div>
+
+                <div
+                    class="group bg-[#060d2a]/60 border border-blue-950/80 rounded-3xl p-8 relative flex flex-col justify-between backdrop-blur-md hover:border-indigo-500/40 transition-all duration-300">
+                    <div>
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-indigo-400 transition-colors">
+                                Audit Tracker
+                            </h3>
+                            <div class="flex items-center gap-2.5 self-start sm:self-auto">
+                                <a href="#" target="_blank" rel="noopener noreferrer"
+                                    class="inline-flex items-center gap-1.5 py-1 px-3 bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-[10px] text-cyan-400 font-semibold rounded-full transition-all duration-300 tracking-wide">
+                                    <span>View Live</span> <i class="fas fa-external-link-alt text-[9px]"></i>
+                                </a>
+                                <span
+                                    class="text-[10px] font-mono tracking-widest px-2.5 py-0.5 bg-indigo-950/50 border border-indigo-900 text-indigo-400 rounded-full uppercase">Enterprise
+                                    RegTech</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">Laravel</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">AngularJS</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">AWS
+                                S3</span>
+                        </div>
+                        <p class="text-blue-300/70 text-sm font-light leading-relaxed mb-6">Regulated compliance
+                            tracking platform
+                            managing full-cycle auditing maps safely.</p>
+                    </div>
+                    <div class="mt-4">
+                        <button data-project="audit"
+                            class="metrics-btn w-full text-center py-3 px-4 bg-blue-950/40 hover:bg-blue-600 border border-blue-900/60 hover:border-blue-400 hover:text-white text-xs text-blue-300 font-semibold rounded-xl transition-all duration-300 tracking-wide">
+                            View Metrics & Architecture
+                        </button>
+                    </div>
+                </div>
+
+                <div
+                    class="group bg-[#060d2a]/60 border border-blue-950/80 rounded-3xl p-8 relative flex flex-col justify-between backdrop-blur-md hover:border-purple-500/40 transition-all duration-300">
+                    <div>
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-purple-400 transition-colors">
+                                E-chit</h3>
+                            <div class="flex items-center gap-2.5 self-start sm:self-auto">
+                                <a href="#" target="_blank" rel="noopener noreferrer"
+                                    class="inline-flex items-center gap-1.5 py-1 px-3 bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-[10px] text-cyan-400 font-semibold rounded-full transition-all duration-300 tracking-wide">
+                                    <span>View Live</span> <i class="fas fa-external-link-alt text-[9px]"></i>
+                                </a>
+                                <span
+                                    class="text-[10px] font-mono tracking-widest px-2.5 py-0.5 bg-purple-950/50 border border-purple-900 text-purple-400 rounded-full uppercase">Installment
+                                    Solution</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">PHP</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">Laravel</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">MySQL</span>
+                        </div>
+                        <p class="text-blue-300/70 text-sm font-light leading-relaxed mb-6">Chit-fund administration
+                            portal enabling
+                            digital experience of payment collections for agents.</p>
+                    </div>
+                    <div class="mt-4">
+                        <button data-project="echit"
+                            class="metrics-btn w-full text-center py-3 px-4 bg-blue-950/40 hover:bg-blue-600 border border-blue-900/60 hover:border-blue-400 hover:text-white text-xs text-blue-300 font-semibold rounded-xl transition-all duration-300 tracking-wide">
+                            View Metrics & Architecture
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            <!-- <div id="tab-content-personal"
+                class="project-tab-pane grid grid-cols-1 md:grid-cols-2 gap-8 transition-opacity duration-300 hidden">
+                <div
+                    class="group bg-[#060d2a]/60 border border-blue-950/80 rounded-3xl p-8 relative flex flex-col justify-between backdrop-blur-md hover:border-cyan-500/40 transition-all duration-300">
+                    <div>
+                        <div class="flex justify-between items-center gap-4 mb-4">
+                            <span
+                                class="text-[10px] font-mono tracking-widest px-2.5 py-0.5 bg-cyan-950/50 border border-cyan-900 text-cyan-400 rounded-full uppercase">Security
+                                Engine</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors mb-2">Nexus
+                            Identity</h3>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">Node.js</span>
+                            <span
+                                class="text-[10px] font-mono bg-blue-950/40 border border-blue-900/40 text-blue-300 px-2 py-0.5 rounded-md">Redis</span>
+                        </div>
+                        <p class="text-blue-300/70 text-sm font-light leading-relaxed mb-6">A production-grade, headless
+                            OAuth2 authorization microservice optimized for high-throughput deployments.</p>
+                    </div>
+                    <button data-project="nexus"
+                        class="metrics-btn w-full text-center py-3 px-4 bg-blue-950/40 hover:bg-blue-600 border border-blue-900/60 hover:border-blue-400 hover:text-white text-xs text-blue-300 font-semibold rounded-xl transition-all duration-300 tracking-wide mt-4">View
+                        Metrics & Architecture</button>
+                </div>
+            </div> -->
+            <div id="tab-content-personal"
+                class="project-tab-pane grid grid-cols-1 gap-8 transition-opacity duration-300 hidden">
+
+                <div
+                    class="relative max-w-2xl mx-auto w-full p-8 rounded-3xl bg-[#060d2a]/40 border border-blue-950/80 backdrop-blur-md flex flex-col items-center text-center group hover:border-cyan-500/30 transition-all duration-300">
+                    <div
+                        class="absolute -inset-px rounded-3xl bg-gradient-to-br from-cyan-500/10 via-transparent to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10">
+                    </div>
+
+                    <div
+                        class="p-4 bg-cyan-500/10 border border-cyan-500/20 rounded-2xl text-cyan-400 text-xl mb-4 animate-pulse-slow">
+                        <i class="fas fa-tools"></i>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-white tracking-wide">Projects are in progress</h3>
+                    <p class="text-sm font-light text-blue-300/60 max-w-md mt-2 leading-relaxed">
+                        System modules are currently being configured, performance and unit testing are being
+                        running, Source links
+                        and deep
+                        dives will be indexed here shortly.
+                    </p>
+
+                    <div
+                        class="mt-6 flex items-center gap-2 px-3 py-1 bg-blue-950/40 border border-blue-900/40 rounded-full font-mono text-[10px] text-blue-400">
+                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse"></span>
+                        <span>PIPELINE_STATUS: COMPILED_STAGING</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact" class="reveal py-24 max-w-4xl mx-auto px-6 text-center">
+        <div
+            class="relative p-12 bg-[#060d2a]/40 border border-blue-950 rounded-3xl backdrop-blur-xl space-y-6 overflow-hidden">
+            <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-cyan-500 rounded-full blur-3xl opacity-15"></div>
+            <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight">Let's build something epic.</h2>
+            <p class="text-blue-300/70 max-w-lg mx-auto text-sm leading-relaxed">Whether you need a robust Laravel
+                application layout, Node.js custom integrations, or just want to chat system setup—my inbox is open.</p>
+            <div class="pt-4 flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
+                <a href="mailto:saheerkp43@gmail.com"
+                    class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-500 via-cyan-500 to-indigo-500 text-slate-950 font-bold rounded-full hover:scale-105 transition-all shadow-[0_0_30px_rgba(6,182,212,0.2)]">
+                    <i class="far fa-envelope mr-2"></i> Get In Touch
+                </a>
+                <a href="tel:+919633971643"
+                    class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-500 via-cyan-500 to-indigo-500 text-slate-950 font-bold rounded-full hover:scale-105 transition-all shadow-[0_0_30px_rgba(6,182,212,0.2)]">
+                    <i class="fa-solid fa-phone mr-2"></i> Hit a Call
+                </a>
+            </div>
+            <div class="flex justify-center space-x-6 text-blue-400 pt-6">
+                <a href="www.linkedin.com/in/saheer-kp" class="hover:text-cyan-400 text-xl transition-colors"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Saheer-kp" class="hover:text-cyan-400 text-xl transition-colors"><i
+                        class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 text-center border-t border-blue-950/40 text-xs text-blue-900">
+        <p>&copy; <span class="copyright-year"></span> Shaheer Portfolio. Built beautifully with <i
+                class="fas fa-heart"></i></p>
+    </footer>
+
+
+    <!-- <div id="project-modal"
+        class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 hidden">
+        <div
+            class="bg-[#04081e] border border-blue-950 max-w-2xl w-full rounded-3xl p-6 md:p-8 relative transform scale-95 transition-transform duration-300 max-h-[90vh] overflow-y-auto">
+            <button id="close-modal" class="absolute top-4 right-4 text-blue-400 hover:text-white text-lg"><i
+                    class="fas fa-times"></i></button>
+            <div id="modal-body-container"></div>
+        </div>
+    </div> -->
+
+    <div id="project-modal"
+        class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 hidden">
+
+        <div class="absolute inset-0 z-0" id="modal-backdrop-close"></div>
+
+        <div id="project-modal-card"
+            class="bg-[#04081e] border border-blue-950 max-w-2xl w-full rounded-3xl p-6 md:p-8 relative transform scale-95 transition-transform duration-300 max-h-[85vh] overflow-y-auto z-10 shadow-2xl custom-scrollbar">
+
+            <button id="close-modal"
+                class="absolute top-5 right-5 text-blue-400/70 hover:text-white transition-colors text-lg p-1 z-20">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div id="modal-body-container" class="w-full text-left"></div>
+        </div>
+    </div>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            // ==========================================
+            // 1. HARDWARE SCROLL REVEAL (OBSERVER MECHANICS)
+            // ==========================================
+            const observerOptions = {
+                root: null,
+                rootMargin: "-60px 0px -10% 0px",
+                threshold: 0.1
+            };
+
+            const scrollObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                        observer.unobserve(entry.target); // Prevents flickering loops on upward track
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll(".reveal").forEach(section => {
+                scrollObserver.observe(section);
+            });
+
+            // ==========================================
+            // 2. PROJECT TAB CONTAINER ENGINE
+            // ==========================================
+            const btnCareer = document.getElementById("btn-career");
+            const btnPersonal = document.getElementById("btn-personal");
+            const tabCareer = document.getElementById("tab-content-career");
+            const tabPersonal = document.getElementById("tab-content-personal");
+
+            function switchTab(activeBtn, inactiveBtn, activeTab, inactiveTab) {
+                // Handle Active Button Styles
+                activeBtn.className = "tab-btn px-6 py-2.5 text-xs tracking-wider uppercase rounded-full transition-all duration-300 bg-gradient-to-r from-blue-600 to-cyan-500 text-slate-950 font-bold shadow-lg";
+                inactiveBtn.className = "tab-btn px-6 py-2.5 text-xs tracking-wider uppercase rounded-full transition-all duration-300 text-blue-400/80 hover:text-white";
+
+                // Handle Visibility Containers
+                activeTab.classList.remove("hidden");
+                inactiveTab.classList.add("hidden");
+            }
+
+            if (btnCareer && btnPersonal) {
+                btnCareer.addEventListener("click", () => switchTab(btnCareer, btnPersonal, tabCareer, tabPersonal));
+                btnPersonal.addEventListener("click", () => switchTab(btnPersonal, btnCareer, tabPersonal, tabCareer));
+            }
+
+            //     // ==========================================
+            //     // 3. ARCHITECTURE METRICS MODAL CONTROLLER
+            //     // ==========================================
+            //     const modal = document.getElementById("project-modal");
+            //     const closeModalBtn = document.getElementById("close-modal");
+            //     const modalBody = document.getElementById("modal-body-container");
+
+            //     // Micro Data Engine dictionary mapping specs directly
+            //     const projectDatabase = {
+            //         american: {
+            //             title: 'The New American',
+            //             type: 'API Developer | aTeam Soft Solutions (2025)',
+            //             desc: 'Engineered tailored headless API layers feeding real-time digital news networks, integrated e-commerce transactional flows, and handled device app purchases.',
+            //             tech: 'WordPress REST API, JWT Auth, PHP, Swagger, MySQL',
+            //             metric: 'Interactive Token Verification & Swagger Specs',
+            //             icon: 'fas fa-newspaper text-cyan-400',
+            //             bullets: [
+            //                 'Built custom optimized WordPress REST API endpoints to deliver dynamic, zero-latency news feed items directly to client mobile applications.',
+            //                 'Implemented a strict JSON Web Token (JWT) custom authentication layer to guarantee safe, stateless mobile user login endpoints.',
+            //                 'Developed complex API routing hooks handling e-commerce product catalogs, cart logic, and checkout workflows cleanly using in-built WooCommerce methods.',
+            //                 'Programmed custom back-end handlers processing secure in-app purchases and real-time subscriber account status loops.',
+            //                 'Integrated Swagger documentation tools into the engine pipeline to generate clean, self-mapping interactive specs for mobile engineering dependencies.'
+            //             ]
+            //         },
+            //         aloha: {
+            //             title: 'Aloha PMS',
+            //             type: 'Telehealth Portal | Full Stack Developer',
+            //             desc: 'Telehealth platform enabling remote medical consultations between patients and healthcare providers.',
+            //             tech: 'PHP, Laravel, MySQL, JQuery, Firebase',
+            //             metric: '+50% Growth in User Registrations',
+            //             icon: 'fas fa-cubes text-emerald-400',
+            //             bullets: [
+            //                 'Developed a comprehensive full-stack web architecture supporting secure end-to-end medical teleconsultation procedures.',
+            //                 'Built a fine-grained role-based access control grid (Clinic Manager, Doctor, Patient) through native Laravel gates protecting clinical history files.',
+            //                 'Implemented an instant messaging engine linking Firebase Cloud Firestore parameters to achieve instantaneous user text pipelines.',
+            //                 'Integrated centralized social authentication profiles using Laravel Socialite, reducing user onboarding friction and increasing conversions by 50%.'
+            //             ]
+            //         },
+            //         easyadvo: {
+            //             title: 'Easy Advo',
+            //             type: 'Legal Teleconsultation System | Backend Developer',
+            //             desc: 'An online platform for one-on-one video conferencing with lawyers. Designed case histories, multi-tenant schedules, and client alert streams.',
+            //             tech: 'PHP, Laravel, Agora.io, Stripe, MySQL',
+            //             metric: 'Automated Secure Client Video Routing Escrows',
+            //             icon: 'fas fa-gavel text-purple-400',
+            //             bullets: [
+            //                 'Engineered dynamic calendar schedules parsing legal case presentation days and notifying legal clients via automated alerts.',
+            //                 'Designed comprehensive normalized backend relational structures cataloging case histories, opposition briefs, and multi-tenant lawyer allocations.',
+            //                 'Integrated high-fidelity WebRTC streaming spaces using Agora.io SDK handlers alongside secure Stripe transactional gateways.'
+            //             ]
+            //         },
+            //         tabsurfaces: {
+            //             title: 'TAB Surfaces',
+            //             type: 'B2B/B2C E-Commerce Platform | Backend Developer',
+            //             desc: 'B2B e-commerce platform for TAB Surfaces, enabling customers to browse and order flooring solutions via web interfaces.',
+            //             tech: 'PHP, Laravel, MySQL, SAP API Suite',
+            //             metric: '40% Backend Query Acceleration',
+            //             icon: 'fas fa-layer-group text-blue-400',
+            //             bullets: [
+            //                 'Served as the Core Backend Engineer constructing high-availability API endpoints delivering clean payloads to client dependencies.',
+            //                 'Architected layered middleware checks managing multi-tier permission rules for granular administrative protection.',
+            //                 'Engineered high-frequency background data sync pipelines calling SAP ERP endpoints to keep stock inventories strictly accurate.',
+            //                 'Optimized database lookups and query indexing paradigms across large data logs, elevating overall lookup performance by 40%.'
+            //             ]
+            //         },
+            //         ride550: {
+            //             title: 'Ride-550',
+            //             type: 'On-Demand Transit Platform | Backend Engineer',
+            //             desc: 'Ride booking platform supporting both on-demand and pre-scheduled bookings for users.',
+            //             tech: 'PHP, Laravel, Node.js, Socket.io, MySQL',
+            //             metric: 'Sub-Second Driver Tracking Interceptors',
+            //             icon: 'fas fa-taxi text-indigo-400',
+            //             bullets: [
+            //                 'Designed and engineered an exhaustive web operational administration portal using clean Laravel Blade loop parameters.',
+            //                 'Configured live driver tracking systems by writing high-frequency Node.js modules running persistent Socket.io connections.',
+            //                 'Integrated Firebase Cloud Messaging parameters to manage push alerts to transit users and active field operators instantly.'
+            //             ]
+            //         },
+            //         yakeety: {
+            //             title: 'Yakeety',
+            //             type: 'Backend & Panel Developer | aTeam Soft Solutions (2022 - 2023)',
+            //             desc: 'A robust web application driving live interactive quiz games through a multi-tier administration panel and robust REST services.',
+            //             tech: 'PHP, Laravel, MySQL, Laravel Blade, HTML5, QR Engines',
+            //             metric: 'Three-Tier Architecture (Super, Team, Player)',
+            //             icon: 'fas fa-gamepad text-blue-400',
+            //             bullets: [
+            //                 'Architected high-availability REST APIs handling sub-second data verification loops for competitive quiz modules.',
+            //                 'Assembled a granular three-tier workflow separating Super Admin structural access, Team Admin parameters, and end-user Player instances cleanly.',
+            //                 'Developed a dynamic questionnaire builder allowing Super Admins to orchestrate intricate query behaviors and game layouts.',
+            //                 'Coded an automated reporting matrix enabling Team Admins to run clean analytical evaluations on live game event performances.',
+            //                 'Engineered on-the-fly QR code generation mechanics to instantly deploy fast-access entry routes for active match environments.'
+            //             ]
+            //         },
+            //         audit: {
+            //             title: 'Audit Tracker',
+            //             type: 'Full-Stack Developer | Excelledia Ventures (2021 - 2022)',
+            //             desc: 'Enterprise web framework built to organize regulatory compliance audits and handle protected enterprise verification documents.',
+            //             tech: 'Laravel, AngularJS, MySQL, AWS S3, RESTful API',
+            //             metric: 'Isolated Multi-Tenant Workflow Maps',
+            //             icon: 'fas fa-shield-check text-indigo-400',
+            //             bullets: [
+            //                 'Managed dual-sided product development loops, engineering back-end Laravel logic alongside crisp front-end AngularJS views.',
+            //                 'Engineered a highly specialized Single-Auditor workspace module allowing professionals to seamlessly initialize, log, and sign off distinct corporate audit files.',
+            //                 'Integrated cloud object pipelines using AWS S3 SDK hooks to handle highly confidential document attachments safely.'
+            //             ]
+            //         },
+            //         echit: {
+            //             title: 'E-chit',
+            //             type: 'Solo / Lead Project Developer | Datastone Solutions (2019 - 2020)',
+            //             desc: 'A robust financial tracking system allowing centralized administrations to govern active chitty accounts and record field collection points.',
+            //             tech: 'PHP, Laravel, MySQL, Mobile-REST Handshakes',
+            //             metric: 'Real-Time Field Collection Ledger Systems',
+            //             icon: 'fas fa-wallet text-purple-400',
+            //             bullets: [
+            //                 'Took complete project ownership from conceptual backend database design blueprints to active live server infrastructure deployment.',
+            //                 'Mapped a dual-module processing loop organizing high-level Central Admin functions and mobile Collection Agent networks.',
+            //                 'Engineered lightweight, stateless REST APIs facilitating data submissions from field agent mobile apps directly to primary records.',
+            //                 'Coded automated processing routines aggregating incoming cash variables into interactive administrative asset summaries and analytics charts.'
+            //             ]
+            //         },
+            //         nexus: {
+            //             title: 'Nexus Identity',
+            //             type: 'SSO Microservice Architecture | Open-Source Tool',
+            //             desc: 'A production-grade, headless OAuth2 authorization microservice optimized for high-throughput single sign-on deployments.',
+            //             tech: 'Node.js, Express, Redis Cluster, Docker, Jest',
+            //             metric: 'Introspection Latency Measured Under 2ms',
+            //             icon: 'fas fa-shield-halved text-cyan-400',
+            //             bullets: [
+            //                 'Architected an open-source, microservice token service tracking cryptographic data signatures securely.',
+            //                 'Configured dedicated horizontal data layer extensions by running Redis cluster instances to handle session introspection loops.',
+            //                 'Assembled automated isolated execution profiles using Docker containers to assure clean deployments across hosting servers.'
+            //             ]
+            //         }
+            //     };
+            //     function openModal(projectId) {
+            //         const data = projectDatabase[projectId];
+            //         if (!data) return;
+
+            //         // Render clean structural layouts cleanly on click
+            //         modalBody.innerHTML = `
+            //     <h3 class="text-2xl font-bold text-white mb-1">${data.title}</h3>
+            //     <p class="text-xs font-mono text-cyan-400 mb-4">${data.type}</p>
+            //     <p class="text-sm text-blue-200/80 mb-6 font-light">${data.desc}</p>
+            //     <div class="mb-6">
+            //         <h4 class="text-xs uppercase font-semibold text-slate-400 tracking-wider mb-2">Engine Tech Stack</h4>
+            //         <p class="text-xs font-mono text-blue-300 bg-blue-950/30 border border-blue-900/50 p-3 rounded-xl">${data.tech}</p>
+            //     </div>
+            //     <div>
+            //         <h4 class="text-xs uppercase font-semibold text-slate-400 tracking-wider mb-2">Key Architectural Contributions</h4>
+            //         <ul class="space-y-2.5 text-xs text-blue-200/70 font-light">
+            //             ${data.bullets.map(b => `<li class="flex items-start gap-2"><span class="text-cyan-400 mt-0.5">▪</span><span>${b}</span></li>`).join('')}
+            //         </ul>
+            //     </div>
+            // `;
+
+            //         // Run UI Class toggles
+            //         modal.classList.remove("hidden");
+            //         setTimeout(() => {
+            //             modal.classList.remove("opacity-0", "pointer-events-none");
+            //             modal.querySelector('div').classList.remove("scale-95");
+            //         }, 10);
+            //     }
+
+            //     function closeModal() {
+            //         modal.classList.add("opacity-0", "pointer-events-none");
+            //         modal.querySelector('div').classList.add("scale-95");
+            //         setTimeout(() => {
+            //             modal.classList.add("hidden");
+            //         }, 300);
+            //     }
+
+            //     // Attach click triggers via micro dataset attributes
+            //     document.body.addEventListener("click", (e) => {
+            //         const targetBtn = e.target.closest(".metrics-btn");
+            //         if (targetBtn) {
+            //             const projectId = targetBtn.getAttribute("data-project");
+            //             openModal(projectId);
+            //         }
+            //     });
+
+            //     if (closeModalBtn) closeModalBtn.addEventListener("click", closeModal);
+            //     if (modal) {
+            //         modal.addEventListener("click", (e) => {
+            //             if (e.target === modal) closeModal();
+            //         });
+            //     }
+
+            // ===================================================
+            //       NATIVE WINDOW VANILLA MODAL DISPATCHER
+            // ===================================================
+            const modal = document.getElementById("project-modal");
+            const closeModalBtn = document.getElementById("close-modal");
+            const modalBody = document.getElementById("modal-body-container");
+            const modalMaxCard = document.getElementById("project-modal-card");
+
+            // Micro Data Engine dictionary mapping specs directly
+            const projectDatabase = {
+                american: {
+                    title: 'The New American',
+                    type: 'API Developer | aTeam Soft Solutions (2025)',
+                    desc: 'Engineered tailored headless API layers feeding real-time digital news networks, integrated e-commerce transactional flows, and handled device app purchases.',
+                    tech: 'WordPress REST API, JWT Auth, PHP, Swagger, MySQL',
+                    metric: 'Interactive Token Verification & Swagger Specs',
+                    icon: 'fas fa-newspaper text-cyan-400',
+                    bullets: [
+                        'Built custom optimized WordPress REST API endpoints to deliver dynamic, zero-latency news feed items directly to client mobile applications.',
+                        'Implemented a strict JSON Web Token (JWT) custom authentication layer to guarantee safe, stateless mobile user login endpoints.',
+                        'Developed complex API routing hooks handling e-commerce product catalogs, cart logic, and checkout workflows cleanly using in-built WooCommerce methods.',
+                        'Programmed custom back-end handlers processing secure in-app purchases and real-time subscriber account status loops.',
+                        'Integrated Swagger documentation tools into the engine pipeline to generate clean, self-mapping interactive specs for mobile engineering dependencies.'
+                    ]
+                },
+                aloha: {
+                    title: 'Aloha PMS',
+                    type: 'Telehealth Portal | Full Stack Developer',
+                    desc: 'Telehealth platform enabling remote medical consultations between patients and healthcare providers.',
+                    tech: 'PHP, Laravel, MySQL, JQuery, Firebase',
+                    metric: '+50% Growth in User Registrations',
+                    icon: 'fas fa-cubes text-emerald-400',
+                    bullets: [
+                        'Developed a comprehensive full-stack web architecture supporting secure end-to-end medical teleconsultation procedures.',
+                        'Built a fine-grained role-based access control grid (Clinic Manager, Doctor, Patient) through native Laravel gates protecting clinical history files.',
+                        'Implemented an instant messaging engine linking Firebase Cloud Firestore parameters to achieve instantaneous user text pipelines.',
+                        'Integrated centralized social authentication profiles using Laravel Socialite, reducing user onboarding friction and increasing conversions by 50%.'
+                    ]
+                },
+                easyadvo: {
+                    title: 'Easy Advo',
+                    type: 'Legal Teleconsultation System | Backend Developer',
+                    desc: 'An online platform for one-on-one video conferencing with lawyers. Designed case histories, multi-tenant schedules, and client alert streams.',
+                    tech: 'PHP, Laravel, Agora.io, Stripe, MySQL',
+                    metric: 'Automated Secure Client Video Routing Escrows',
+                    icon: 'fas fa-gavel text-purple-400',
+                    bullets: [
+                        'Engineered dynamic calendar schedules parsing legal case presentation days and notifying legal clients via automated alerts.',
+                        'Designed comprehensive normalized backend relational structures cataloging case histories, opposition briefs, and multi-tenant lawyer allocations.',
+                        'Integrated high-fidelity WebRTC streaming spaces using Agora.io SDK handlers alongside secure Stripe transactional gateways.'
+                    ]
+                },
+                tabsurfaces: {
+                    title: 'TAB Surfaces',
+                    type: 'B2B/B2C E-Commerce Platform | Backend Developer',
+                    desc: 'B2B e-commerce platform for TAB Surfaces, enabling customers to browse and order flooring solutions via web interfaces.',
+                    tech: 'PHP, Laravel, MySQL, SAP API Suite',
+                    metric: '40% Backend Query Acceleration',
+                    icon: 'fas fa-layer-group text-blue-400',
+                    bullets: [
+                        'Served as the Core Backend Engineer constructing high-availability API endpoints delivering clean payloads to client dependencies.',
+                        'Architected layered middleware checks managing multi-tier permission rules for granular administrative protection.',
+                        'Engineered high-frequency background data sync pipelines calling SAP ERP endpoints to keep stock inventories strictly accurate.',
+                        'Optimized database lookups and query indexing paradigms across large data logs, elevating overall lookup performance by 40%.'
+                    ]
+                },
+                ride550: {
+                    title: 'Ride-550',
+                    type: 'On-Demand Transit Platform | Backend Engineer',
+                    desc: 'Ride booking platform supporting both on-demand and pre-scheduled bookings for users.',
+                    tech: 'PHP, Laravel, Node.js, Socket.io, MySQL',
+                    metric: 'Sub-Second Driver Tracking Interceptors',
+                    icon: 'fas fa-taxi text-indigo-400',
+                    bullets: [
+                        'Designed and engineered an exhaustive web operational administration portal using clean Laravel Blade loop parameters.',
+                        'Configured live driver tracking systems by writing high-frequency Node.js modules running persistent Socket.io connections.',
+                        'Integrated Firebase Cloud Messaging parameters to manage push alerts to transit users and active field operators instantly.'
+                    ]
+                },
+                yakeety: {
+                    title: 'Yakeety',
+                    type: 'Backend & Panel Developer | aTeam Soft Solutions (2022 - 2023)',
+                    desc: 'A robust web application driving live interactive quiz games through a multi-tier administration panel and robust REST services.',
+                    tech: 'PHP, Laravel, MySQL, Laravel Blade, HTML5, QR Engines',
+                    metric: 'Three-Tier Architecture (Super, Team, Player)',
+                    icon: 'fas fa-gamepad text-blue-400',
+                    bullets: [
+                        'Architected high-availability REST APIs handling sub-second data verification loops for competitive quiz modules.',
+                        'Assembled a granular three-tier workflow separating Super Admin structural access, Team Admin parameters, and end-user Player instances cleanly.',
+                        'Developed a dynamic questionnaire builder allowing Super Admins to orchestrate intricate query behaviors and game layouts.',
+                        'Coded an automated reporting matrix enabling Team Admins to run clean analytical evaluations on live game event performances.',
+                        'Engineered on-the-fly QR code generation mechanics to instantly deploy fast-access entry routes for active match environments.'
+                    ]
+                },
+                audit: {
+                    title: 'Audit Tracker',
+                    type: 'Full-Stack Developer | Excelledia Ventures (2021 - 2022)',
+                    desc: 'Enterprise web framework built to organize regulatory compliance audits and handle protected enterprise verification documents.',
+                    tech: 'Laravel, AngularJS, MySQL, AWS S3, RESTful API',
+                    metric: 'Isolated Multi-Tenant Workflow Maps',
+                    icon: 'fas fa-shield-check text-indigo-400',
+                    bullets: [
+                        'Managed dual-sided product development loops, engineering back-end Laravel logic alongside crisp front-end AngularJS views.',
+                        'Engineered a highly specialized Single-Auditor workspace module allowing professionals to seamlessly initialize, log, and sign off distinct corporate audit files.',
+                        'Integrated cloud object pipelines using AWS S3 SDK hooks to handle highly confidential document attachments safely.'
+                    ]
+                },
+                echit: {
+                    title: 'E-chit',
+                    type: 'Solo / Lead Project Developer | Datastone Solutions (2019 - 2020)',
+                    desc: 'A robust financial tracking system allowing centralized administrations to govern active chitty accounts and record field collection points.',
+                    tech: 'PHP, Laravel, MySQL, Mobile-REST Handshakes',
+                    metric: 'Real-Time Field Collection Ledger Systems',
+                    icon: 'fas fa-wallet text-purple-400',
+                    bullets: [
+                        'Took complete project ownership from conceptual backend database design blueprints to active live server infrastructure deployment.',
+                        'Mapped a dual-module processing loop organizing high-level Central Admin functions and mobile Collection Agent networks.',
+                        'Engineered lightweight, stateless REST APIs facilitating data submissions from field agent mobile apps directly to primary records.',
+                        'Coded automated processing routines aggregating incoming cash variables into interactive administrative asset summaries and analytics charts.'
+                    ]
+                },
+                nexus: {
+                    title: 'Nexus Identity',
+                    type: 'SSO Microservice Architecture | Open-Source Tool',
+                    desc: 'A production-grade, headless OAuth2 authorization microservice optimized for high-throughput single sign-on deployments.',
+                    tech: 'Node.js, Express, Redis Cluster, Docker, Jest',
+                    metric: 'Introspection Latency Measured Under 2ms',
+                    icon: 'fas fa-shield-halved text-cyan-400',
+                    bullets: [
+                        'Architected an open-source, microservice token service tracking cryptographic data signatures securely.',
+                        'Configured dedicated horizontal data layer extensions by running Redis cluster instances to handle session introspection loops.',
+                        'Assembled automated isolated execution profiles using Docker containers to assure clean deployments across hosting servers.'
+                    ]
+                }
+            };
+
+            function openModal(projectId) {
+                const data = projectDatabase[projectId];
+                if (!data || !modal || !modalBody || !modalMaxCard) return;
+
+                // Render clean structural layouts inside dynamic frame container
+                modalBody.innerHTML = `
+        <h3 class="text-2xl font-bold text-white mb-1">${data.title}</h3>
+        <p class="text-xs font-mono text-cyan-400 mb-4">${data.type}</p>
+        <p class="text-sm text-blue-200/80 mb-6 font-light">${data.desc}</p>
+        <div class="mb-6">
+            <h4 class="text-xs uppercase font-semibold text-slate-400 tracking-wider mb-2">Engine Tech Stack</h4>
+            <p class="text-xs font-mono text-blue-300 bg-blue-950/30 border border-blue-900/50 p-3 rounded-xl">${data.tech}</p>
+        </div>
+        <div>
+            <h4 class="text-xs uppercase font-semibold text-slate-400 tracking-wider mb-2">Key Architectural Contributions</h4>
+            <ul class="space-y-2.5 text-xs text-blue-200/70 font-light">
+                ${data.bullets.map(b => `<li class="flex items-start gap-2"><span class="text-cyan-400 mt-0.5">▪</span><span>${b}</span></li>`).join('')}
+            </ul>
+        </div>
+    `;
+
+                // Reset scroll offset inside modal container card to top on entry
+                modalMaxCard.scrollTop = 0;
+
+                // 1. Unhide block container first to activate native flex rendering calculations
+                modal.classList.remove("hidden");
+
+                // 2. DISABLE BACKGROUND SCROLLING
+                document.body.classList.add("overflow-hidden");
+
+                // 3. Schedule window animation sequence inside browser execution queue frame
+                requestAnimationFrame(() => {
+                    setTimeout(() => {
+                        modal.classList.remove("opacity-0", "pointer-events-none");
+                        modal.classList.add("opacity-100");
+
+                        modalMaxCard.classList.remove("scale-95");
+                        modalMaxCard.classList.add("scale-100");
+                    }, 20);
+                });
+            }
+
+            function closeModal() {
+                if (!modal || !modalMaxCard) return;
+
+                // Cleanly execute entry scaling step transitions downward
+                modal.classList.remove("opacity-100");
+                modal.classList.add("opacity-0", "pointer-events-none");
+
+                modalMaxCard.classList.remove("scale-100");
+                modalMaxCard.classList.add("scale-95");
+
+                // 1. RE-ENABLE BACKGROUND SCROLLING
+                document.body.classList.remove("overflow-hidden");
+
+                // Re-apply layout hidden class rule exactly after the 300ms transition finishes
+                setTimeout(() => {
+                    modal.classList.add("hidden");
+                    if (modalBody) modalBody.innerHTML = "";
+                }, 300);
+            }
+
+            // Attach click triggers via micro dataset attributes
+            document.body.addEventListener("click", (e) => {
+                const targetBtn = e.target.closest(".metrics-btn");
+                if (targetBtn) {
+                    const projectId = targetBtn.getAttribute("data-project");
+                    openModal(projectId);
+                }
+            });
+
+            // Bind Modal Triggers & Keyboard Event Loops
+            if (closeModalBtn) closeModalBtn.addEventListener("click", closeModal);
+
+            // Catch clicks hitting the background backdrop layer or outside the container target
+            if (modal) {
+                modal.addEventListener("click", (e) => {
+                    const modalBackdropClose = document.getElementById("modal-backdrop-close");
+                    if (e.target === modal || e.target === modalBackdropClose) {
+                        closeModal();
+                    }
+                });
+            }
+
+            // Global safety net: Close active views instantly on hardware escape key triggers
+            window.addEventListener("keydown", (e) => {
+                if (e.key === "Escape" && modal && !modal.classList.contains("hidden")) {
+                    closeModal();
+                }
+            });
+        });
+        // Append these explicit entries to your `projectDatabase` dictionary mapping configurations inside your main script block:
+
+
+        // ===================================================
+        //  VANILLA JS ECOSYSTEM TAB ROUTER ENGINE
+        // ===================================================
+        const expNavButtons = document.querySelectorAll(".exp-nav-btn");
+        const expContentPanels = document.querySelectorAll(".exp-content-panel");
+
+        expNavButtons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const targetToken = btn.getAttribute("data-target");
+
+                // 1. Reset all button elements styling classes back to old states
+                expNavButtons.forEach(b => {
+                    b.className = "exp-nav-btn w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center justify-between group border-transparent hover:bg-blue-950/20";
+
+                    // Sub-elements text reset
+                    const companyId = b.getAttribute("data-target");
+                    document.getElementById(`exp-title-${companyId}`).className = "font-bold text-sm tracking-wide text-white";
+
+                    const arrowIcon = document.getElementById(`exp-arrow-${companyId}`);
+                    arrowIcon.className = "fas fa-chevron-right text-xs text-blue-900 transition-transform";
+                });
+
+                // 2. Set conditional active layouts based on design properties
+                if (targetToken === "ateam") {
+                    btn.className = "exp-nav-btn w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center justify-between group bg-gradient-to-r from-blue-950/60 to-cyan-950/40 border-cyan-500/50";
+                    document.getElementById("exp-title-ateam").className = "font-bold text-sm tracking-wide text-cyan-400";
+                    document.getElementById("exp-arrow-ateam").className = "fas fa-chevron-right text-xs text-cyan-400 translate-x-1 transition-transform";
+                } else if (targetToken === "excelledia") {
+                    btn.className = "exp-nav-btn w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center justify-between group bg-gradient-to-r from-blue-950/60 to-indigo-950/40 border-blue-500/50";
+                    document.getElementById("exp-title-excelledia").className = "font-bold text-sm tracking-wide text-blue-400";
+                    document.getElementById("exp-arrow-excelledia").className = "fas fa-chevron-right text-xs text-blue-400 translate-x-1 transition-transform";
+                } else if (targetToken === "datastone") {
+                    btn.className = "exp-nav-btn w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center justify-between group bg-gradient-to-r from-blue-950/60 to-purple-950/40 border-indigo-500/50";
+                    document.getElementById("exp-title-datastone").className = "font-bold text-sm tracking-wide text-indigo-400";
+                    document.getElementById("exp-arrow-datastone").className = "fas fa-chevron-right text-xs text-indigo-400 translate-x-1 transition-transform";
+                }
+
+                // 3. Update viewports visibility
+                expContentPanels.forEach(panel => {
+                    if (panel.id === `exp-panel-${targetToken}`) {
+                        panel.classList.remove("hidden");
+                        setTimeout(() => {
+                            panel.className = "exp-content-panel grid grid-cols-1 md:grid-cols-3 gap-4 transition-all duration-300 opacity-100 scale-100";
+                        }, 20);
+                    } else {
+                        panel.className = "exp-content-panel grid grid-cols-1 md:grid-cols-3 gap-4 transition-all duration-300 opacity-0 scale-95 hidden";
+                    }
+                });
+            });
+        });
+
+
+        // ===================================================
+        //  VANILLA JS NATIVE HERO TYPING ANIMATION ENGINE
+        // ===================================================
+        const typingTarget = document.getElementById("typing-text");
+
+        if (typingTarget) {
+            const roles = ['PHP Laravel Developer...', 'Node.js Developer...', 'Full-Stack Developer...'];
+            let currentRoleIndex = 0;
+            let currentText = '';
+            let isDeleting = false;
+            let typeSpeed = 100;
+
+            function typeEffect() {
+                const currentFullText = roles[currentRoleIndex];
+
+                if (isDeleting) {
+                    currentText = currentFullText.substring(0, currentText.length - 1);
+                    typeSpeed = 40;
+                } else {
+                    currentText = currentFullText.substring(0, currentText.length + 1);
+                    typeSpeed = 100;
+                }
+
+                // Output current character string frame directly to node text
+                typingTarget.textContent = currentText;
+
+                if (!isDeleting && currentText === currentFullText) {
+                    typeSpeed = 1800; // Complete phrase wait delay frame
+                    isDeleting = true;
+                } else if (isDeleting && currentText === '') {
+                    isDeleting = false;
+                    currentRoleIndex = (currentRoleIndex + 1) % roles.length;
+                    typeSpeed = 400; // Next string layout rotation interval step
+                }
+
+                setTimeout(typeEffect, typeSpeed);
+            }
+
+            // Trigger execution
+            typeEffect();
+        }
+
+        const copyrightElement = document.querySelector(".copyright-year");
+        if (copyrightElement) {
+            copyrightElement.textContent = new Date().getFullYear();
+        }
+
+    </script>
+</body>
+
+</html>

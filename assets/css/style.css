@@ -1,0 +1,48 @@
+/* Base Global Section Reveal Styles */
+.typing-area {
+    font-family: 'Kode Mono', sans-serif;
+    /* Optional: match your existing layout weights if needed (200 to 800) */
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.9s cubic-bezier(0.21, 1.02, 0.43, 1.01);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Target specific skills icons inside the grid */
+.skill-card {
+    opacity: 0;
+    transform: translateY(25px) scale(0.95);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active .skill-card {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Custom scrollbar reset for overall fluid layout container */
+.custom-scroll-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.custom-scroll-container::-webkit-scrollbar-track {
+    background: rgba(6, 13, 42, 0.5);
+}
+
+.custom-scroll-container::-webkit-scrollbar-thumb {
+    background: rgba(30, 58, 138, 0.5);
+    border-radius: 9999px;
+}
+
+.custom-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(6, 182, 212, 0.5);
+}
