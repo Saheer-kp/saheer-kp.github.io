@@ -7,13 +7,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // Definition of the terminal sequence steps
     const sequence = [
         { type: 'input', text: 'cmd/> portfolio init' },
-        { type: 'output', text: 'initializing shaheer‘s portfolio...', delayAfter: 2000 },
+        { type: 'output', text: 'initializing saheer‘s portfolio...', delayAfter: 2000 },
         { type: 'success', text: '✔ Initialized successfully.', delayAfter: 1500 }
     ];
 
     let stepIndex = 0;
 
     function runSequence() {
+        sessionStorage.setItem("portfolioAnimated", "true");
         if (stepIndex >= sequence.length) {
             // Sequence complete! Fade out the terminal overlay
             setTimeout(() => {
@@ -71,7 +72,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Start the boot sequence layout execution
-    runSequence();
+    // runSequence();
+    if (sessionStorage.getItem("portfolioAnimated") !== "true") {
+        runSequence();
+    } else {
+        loaderOverlay.classList.add('hidden');
+    }
 
     // ==========================================
     // 1. HARDWARE SCROLL REVEAL (OBSERVER MECHANICS)
