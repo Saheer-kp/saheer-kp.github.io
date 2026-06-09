@@ -72,7 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Start the boot sequence layout execution
-    // runSequence();
     if (sessionStorage.getItem("portfolioAnimated") !== "true") {
         runSequence();
     } else {
