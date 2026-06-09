@@ -1,5 +1,78 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+
+    const terminalBody = document.getElementById("terminal-body");
+    const loaderOverlay = document.getElementById("terminal-loader");
+
+    // Definition of the terminal sequence steps
+    const sequence = [
+        { type: 'input', text: 'cmd/> portfolio init' },
+        { type: 'output', text: 'initializing shaheer‘s portfolio...', delayAfter: 2000 },
+        { type: 'success', text: '✔ Initialized successfully.', delayAfter: 1500 }
+    ];
+
+    let stepIndex = 0;
+
+    function runSequence() {
+        if (stepIndex >= sequence.length) {
+            // Sequence complete! Fade out the terminal overlay
+            setTimeout(() => {
+                loaderOverlay.classList.add("opacity-0", "pointer-events-none");
+                // Optional: completely remove from DOM after CSS transition finishes
+                setTimeout(() => loaderOverlay.remove(), 700);
+            }, 500);
+            return;
+        }
+
+        const currentStep = sequence[stepIndex];
+
+        if (currentStep.type === 'input') {
+            // Create the input element line with a flashing cursor
+            const line = document.createElement("div");
+            line.className = "flex items-center text-cyan-400";
+            line.innerHTML = `<span></span><span class="animate-pulse ml-0.5 w-2 h-4 bg-cyan-400 inline-block align-middle"></span>`;
+            terminalBody.appendChild(line);
+
+            const textSpan = line.children[0];
+            const cursorSpan = line.children[1];
+            let charIndex = 0;
+
+            // Character-by-character typewriter loop
+            function typeChar() {
+                if (charIndex < currentStep.text.length) {
+                    textSpan.textContent += currentStep.text.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeChar, 60); // Speed of user typing keyboard simulations
+                } else {
+                    // Typing finished, remove blinking input cursor from this line and advance
+                    cursorSpan.remove();
+                    stepIndex++;
+                    setTimeout(runSequence, 400);
+                }
+            }
+            typeChar();
+
+        } else {
+            // For log and system output updates
+            const line = document.createElement("div");
+
+            if (currentStep.type === 'success') {
+                line.className = "text-emerald-400 font-bold";
+            } else {
+                line.className = "text-blue-400/80 italic";
+            }
+
+            line.textContent = currentStep.text;
+            terminalBody.appendChild(line);
+
+            stepIndex++;
+            setTimeout(runSequence, currentStep.delayAfter || 400);
+        }
+    }
+
+    // Start the boot sequence layout execution
+    runSequence();
+
     // ==========================================
     // 1. HARDWARE SCROLL REVEAL (OBSERVER MECHANICS)
     // ==========================================
@@ -57,9 +130,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const projectDatabase = {
         american: {
             title: 'The New American',
-            type: 'API Developer | aTeam Soft Solutions (2025)',
+            type: 'API Developer | aTeam Soft Solutions',
             desc: 'Engineered tailored headless API layers feeding real-time digital news networks, integrated e-commerce transactional flows, and handled device app purchases.',
-            tech: 'WordPress REST API, JWT Auth, PHP, Swagger, MySQL',
+            tech: 'PHP, MySQL, WordPress RESTful API, JWT Auth',
             metric: 'Interactive Token Verification & Swagger Specs',
             icon: 'fas fa-newspaper text-cyan-400',
             bullets: [
@@ -72,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         aloha: {
             title: 'Aloha PMS',
-            type: 'Telehealth Portal | Full Stack Developer',
+            type: 'Full Stack Developer | aTeam Soft Solutions',
             desc: 'Telehealth platform enabling remote medical consultations between patients and healthcare providers.',
             tech: 'PHP, Laravel, MySQL, JQuery, Firebase',
             metric: '+50% Growth in User Registrations',
@@ -87,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         easyadvo: {
             title: 'Easy Advo',
-            type: 'Legal Teleconsultation System | Backend Developer',
+            type: 'Backend Developer | aTeam Soft Solutions',
             desc: 'An online platform for one-on-one video conferencing with lawyers. Designed case histories, multi-tenant schedules, and client alert streams.',
             tech: 'PHP, Laravel, Agora.io, Stripe, MySQL',
             metric: 'Automated Secure Client Video Routing Escrows',
@@ -101,9 +174,9 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         tabsurfaces: {
             title: 'TAB Surfaces',
-            type: 'B2B/B2C E-Commerce Platform | Backend Developer',
+            type: 'Backend Developer | aTeam Soft Solutions',
             desc: 'B2B e-commerce platform for TAB Surfaces, enabling customers to browse and order flooring solutions via web interfaces.',
-            tech: 'PHP, Laravel, MySQL, SAP API Suite',
+            tech: 'PHP, Laravel, MySQL, RESTful API',
             metric: '40% Backend Query Acceleration',
             icon: 'fas fa-layer-group text-blue-400',
             bullets: [
@@ -115,9 +188,9 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         ride550: {
             title: 'Ride-550',
-            type: 'On-Demand Transit Platform | Backend Engineer',
+            type: 'Full Stack Developer | aTeam Soft Solutions',
             desc: 'Ride booking platform supporting both on-demand and pre-scheduled bookings for users.',
-            tech: 'PHP, Laravel, Node.js, Socket.io, MySQL',
+            tech: 'PHP, Laravel, Node.js, Socket.io, JQuery, MySQL',
             metric: 'Sub-Second Driver Tracking Interceptors',
             icon: 'fas fa-taxi text-indigo-400',
             bullets: [
@@ -129,9 +202,9 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         yakeety: {
             title: 'Yakeety',
-            type: 'Backend & Panel Developer | aTeam Soft Solutions (2022 - 2023)',
+            type: 'Full Stack Developer | aTeam Soft Solutions',
             desc: 'A robust web application driving live interactive quiz games through a multi-tier administration panel and robust REST services.',
-            tech: 'PHP, Laravel, MySQL, Laravel Blade, HTML5, QR Engines',
+            tech: 'PHP, Laravel, MySQL, JQuery, RESTful API',
             metric: 'Three-Tier Architecture (Super, Team, Player)',
             icon: 'fas fa-gamepad text-blue-400',
             bullets: [
@@ -144,9 +217,9 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         audit: {
             title: 'Audit Tracker',
-            type: 'Full-Stack Developer | Excelledia Ventures (2021 - 2022)',
+            type: 'Full-Stack Developer | Excelledia Ventures',
             desc: 'Enterprise web framework built to organize regulatory compliance audits and handle protected enterprise verification documents.',
-            tech: 'Laravel, AngularJS, MySQL, AWS S3, RESTful API',
+            tech: 'Laravel, AngularJS, MySQL, AWS S3',
             metric: 'Isolated Multi-Tenant Workflow Maps',
             icon: 'fas fa-shield-check text-indigo-400',
             bullets: [
@@ -157,9 +230,9 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         echit: {
             title: 'E-chit',
-            type: 'Solo / Lead Project Developer | Datastone Solutions (2019 - 2020)',
+            type: 'Full Stack Developer | Datastone Solutions (2019 - 2020)',
             desc: 'A robust financial tracking system allowing centralized administrations to govern active chitty accounts and record field collection points.',
-            tech: 'PHP, Laravel, MySQL, Mobile-REST Handshakes',
+            tech: 'PHP, Laravel, MySQL, RESTful API, JQuery',
             metric: 'Real-Time Field Collection Ledger Systems',
             icon: 'fas fa-wallet text-purple-400',
             bullets: [
