@@ -2,6 +2,10 @@ html {
     scroll-behavior: smooth;
 }
 
+body, h3 {
+    font-family: 'Kode Mono', sans-serif !important;
+}
+
 .typing-area {
     font-family: 'Kode Mono', sans-serif;
     /* Optional: match your existing layout weights if needed (200 to 800) */

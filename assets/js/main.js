@@ -414,7 +414,7 @@ expNavButtons.forEach(btn => {
 const typingTarget = document.getElementById("typing-text");
 
 if (typingTarget) {
-    const roles = ['PHP Laravel Architect.', 'Node.js Developer.', 'Full-Stack Developer.'];
+    const roles = ['PHP Laravel Architect.', 'Software Engineer', 'Node.js Developer.', 'Full-Stack Developer.'];
     let currentRoleIndex = 0;
     let currentText = '';
     let isDeleting = false;
@@ -447,7 +447,10 @@ if (typingTarget) {
     }
 
     // Trigger execution
-    typeEffect();
+    setTimeout(() => {
+        typeEffect();
+    }, 1000);
+    
 }
 
 const copyrightElement = document.querySelector(".copyright-year");

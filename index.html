@@ -18,11 +18,7 @@
 </head>
 
 <body
-    class="bg-[#03071e] text-blue-100 font-sans antialiased selection:bg-blue-600 selection:text-white overflow-x-hidden"
-    x-data="{ 
-        modalOpen: false, 
-        activeProject: { title: '', type: '', desc: '', bullets: [], tech: '', metric: '', icon: '' } 
-      }" :class="modalOpen ? 'overflow-hidden' : ''">
+    class="bg-[#03071e] text-blue-100 font-sans antialiased selection:bg-blue-600 selection:text-white overflow-x-hidden">
 
     <div id="terminal-loader"
         class=" fixed inset-0 bg-[#020617] z-[9999] flex items-center justify-center font-mono p-4 transition-opacity duration-700 ease-out">
@@ -81,10 +77,10 @@
                 portfolio_status: compiled_success
             </span> -->
 
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white leading-tight">
+            <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
                 Hi, I am
                 <span
-                    class="bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent animate-pulse drop-shadow-[0_0_12px_rgba(34,211,238,0.4)]">
+                    class="text-4xl md:text-7xl bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent animate-pulse drop-shadow-[0_0_12px_rgba(34,211,238,0.4)]">
                     Saheer
                 </span>
             </h1>
@@ -460,9 +456,9 @@
                         <div class="reveal-card skill-card group relative flex flex-col items-center justify-center p-6 bg-[#070f2e]/60 border border-blue-950 rounded-2xl will-change-transform transition-[transform,border-color] duration-200 ease-out hover:border-orange-400/50 hover:-translate-y-1.5"
                             style="--delay: 1;">
                             <i class="devicon-amazonwebservices-plain colored text-5xl"></i>
-                            <span class="mt-4 text-[11px] font-medium text-blue-200 text-center leading-tight">AWS (EC2,
-                                S3,
-                                SES, RDS)</span>
+                            <span class="mt-4 text-[11px] font-medium text-blue-200 text-center leading-tight">
+                                AWS <br> 
+                                (EC2,S3,SES,RDS)</span>
                         </div>
                         <div class="reveal-card skill-card group relative flex flex-col items-center justify-center p-6 bg-[#070f2e]/60 border border-blue-950 rounded-2xl will-change-transform transition-[transform,border-color] duration-200 ease-out hover:border-sky-400/50 hover:-translate-y-1.5"
                             style="--delay: 2;">
