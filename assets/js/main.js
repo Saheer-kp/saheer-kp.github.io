@@ -414,7 +414,7 @@ expNavButtons.forEach(btn => {
 const typingTarget = document.getElementById("typing-text");
 
 if (typingTarget) {
-    const roles = ['PHP Laravel Architect.', 'Software Engineer.', 'Node.js Developer.', 'Full-Stack Developer.'];
+    const roles = ['Node.js Developer.', 'Software Engineer.', 'PHP Laravel Architect.', 'Full-Stack Developer.'];
     let currentRoleIndex = 0;
     let currentText = '';
     let isDeleting = false;
